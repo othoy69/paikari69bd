@@ -18,4 +18,7 @@ export interface HomeSummary {
   newArrivals: Product[];
   trustStats: TrustStats;
   flashEndsAt?: string;
+  featuredJerseys?: Product[];
+  featuredSarees?: Product[];
+  featuredThreePiece?: Product[];
 }

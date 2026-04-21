@@ -47,6 +47,9 @@ router.get("/home/summary", (_req, res) => {
     .sort((a, b) => b.sold - a.sold)
     .slice(0, 8);
   const newArrivals = products.filter((p) => (p.tags ?? []).includes("new")).slice(0, 8);
+  const featuredJerseys = products.filter((p) => (p.tags ?? []).includes("featured-jersey")).slice(0, 6);
+  const featuredSarees = products.filter((p) => (p.tags ?? []).includes("featured-saree")).slice(0, 6);
+  const featuredThreePiece = products.filter((p) => (p.tags ?? []).includes("featured-threepiece")).slice(0, 6);
   const heroSlides = [
     {
       titleBn: "পাইকারি দামে সারা বাংলাদেশে",
@@ -89,6 +92,9 @@ router.get("/home/summary", (_req, res) => {
       satisfaction: 98.6,
     },
     flashEndsAt: flashEndsAtIso(),
+    featuredJerseys,
+    featuredSarees,
+    featuredThreePiece,
   });
 });
 

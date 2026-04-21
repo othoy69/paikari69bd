@@ -226,6 +226,105 @@ export const GetHomeSummaryResponse = zod.object({
     satisfaction: zod.number(),
   }),
   flashEndsAt: zod.string().optional(),
+  featuredJerseys: zod
+    .array(
+      zod.object({
+        id: zod.string(),
+        slug: zod.string(),
+        titleBn: zod.string(),
+        titleEn: zod.string(),
+        descriptionBn: zod.string().optional(),
+        category: zod.string(),
+        categoryNameBn: zod.string().optional(),
+        source: zod.string().describe("source\/location"),
+        image: zod.string(),
+        gallery: zod.array(zod.string()),
+        oldPrice: zod.number(),
+        wholesalePrice: zod.number(),
+        moq: zod.number(),
+        unit: zod.string(),
+        tiers: zod.array(
+          zod.object({
+            minQty: zod.number(),
+            price: zod.number(),
+            label: zod.string().optional(),
+          }),
+        ),
+        stock: zod.number(),
+        badges: zod.array(zod.string()),
+        rating: zod.number(),
+        sold: zod.number(),
+        deliveryNote: zod.string(),
+        flashEndsAt: zod.string().optional(),
+      }),
+    )
+    .optional(),
+  featuredSarees: zod
+    .array(
+      zod.object({
+        id: zod.string(),
+        slug: zod.string(),
+        titleBn: zod.string(),
+        titleEn: zod.string(),
+        descriptionBn: zod.string().optional(),
+        category: zod.string(),
+        categoryNameBn: zod.string().optional(),
+        source: zod.string().describe("source\/location"),
+        image: zod.string(),
+        gallery: zod.array(zod.string()),
+        oldPrice: zod.number(),
+        wholesalePrice: zod.number(),
+        moq: zod.number(),
+        unit: zod.string(),
+        tiers: zod.array(
+          zod.object({
+            minQty: zod.number(),
+            price: zod.number(),
+            label: zod.string().optional(),
+          }),
+        ),
+        stock: zod.number(),
+        badges: zod.array(zod.string()),
+        rating: zod.number(),
+        sold: zod.number(),
+        deliveryNote: zod.string(),
+        flashEndsAt: zod.string().optional(),
+      }),
+    )
+    .optional(),
+  featuredThreePiece: zod
+    .array(
+      zod.object({
+        id: zod.string(),
+        slug: zod.string(),
+        titleBn: zod.string(),
+        titleEn: zod.string(),
+        descriptionBn: zod.string().optional(),
+        category: zod.string(),
+        categoryNameBn: zod.string().optional(),
+        source: zod.string().describe("source\/location"),
+        image: zod.string(),
+        gallery: zod.array(zod.string()),
+        oldPrice: zod.number(),
+        wholesalePrice: zod.number(),
+        moq: zod.number(),
+        unit: zod.string(),
+        tiers: zod.array(
+          zod.object({
+            minQty: zod.number(),
+            price: zod.number(),
+            label: zod.string().optional(),
+          }),
+        ),
+        stock: zod.number(),
+        badges: zod.array(zod.string()),
+        rating: zod.number(),
+        sold: zod.number(),
+        deliveryNote: zod.string(),
+        flashEndsAt: zod.string().optional(),
+      }),
+    )
+    .optional(),
 });
 
 export const CreateOrderBody = zod.object({

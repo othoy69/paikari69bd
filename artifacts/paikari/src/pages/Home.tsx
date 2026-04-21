@@ -1,5 +1,6 @@
 import { useGetHomeSummary } from "@workspace/api-client-react";
 import { ProductCard } from "../components/product/ProductCard";
+import { FeaturedSegment } from "../components/product/FeaturedSegment";
 import { CountdownTimer } from "../components/common/CountdownTimer";
 import { PaymentBadges } from "../components/common/PaymentBadges";
 import { Skeleton } from "../components/ui/skeleton";
@@ -72,6 +73,37 @@ export default function Home() {
           </div>
         </Carousel>
       </section>
+
+      {/* ─── HERO FEATURED SEGMENTS (most prominent) ─── */}
+      <FeaturedSegment
+        theme="jersey"
+        eyebrow="মেগা অফার • জার্সি কালেকশন"
+        titleBn="অরিজিনাল জার্সি — পাইকারি দামে!"
+        subtitleBn="৫৫% পর্যন্ত ছাড়! আর্জেন্টিনা, ব্রাজিল, বাংলাদেশ — সব দল • রিসেলার প্রাইস"
+        ctaText="সব জার্সি দেখুন"
+        ctaHref="/search?q=জার্সি"
+        products={summary.featuredJerseys ?? []}
+      />
+
+      <FeaturedSegment
+        theme="saree"
+        eyebrow="স্পেশাল কালেকশন • টাঙ্গাইল"
+        titleBn="টাঙ্গাইলের অরিজিনাল শাড়ি কালেকশন"
+        subtitleBn="সরাসরি তাঁতি থেকে! ৫০% পর্যন্ত ছাড় • হাফ সিল্ক, জামদানি, কটন তাঁত"
+        ctaText="শাড়ি কালেকশন"
+        ctaHref="/search?q=টাঙ্গাইল"
+        products={summary.featuredSarees ?? []}
+      />
+
+      <FeaturedSegment
+        theme="threepiece"
+        eyebrow="হট ট্রেন্ড • থ্রি-পিস কালেকশন"
+        titleBn="প্রিমিয়াম থ্রি-পিস কালেকশন"
+        subtitleBn="জর্জেট, লন কটন, ইন্ডিয়ান আনস্টিচড • ৫২% পর্যন্ত পাইকারি ছাড়"
+        ctaText="থ্রি-পিস দেখুন"
+        ctaHref="/search?q=থ্রি-পিস"
+        products={summary.featuredThreePiece ?? []}
+      />
 
       {/* Trust micro-bar */}
       <section className="container mx-auto px-3 md:px-4 mt-3">

@@ -511,6 +511,15 @@ components:
           items: { $ref: "#/components/schemas/Product" }
         trustStats: { $ref: "#/components/schemas/TrustStats" }
         flashEndsAt: { type: string }
+        featuredJerseys:
+          type: array
+          items: { $ref: "#/components/schemas/Product" }
+        featuredSarees:
+          type: array
+          items: { $ref: "#/components/schemas/Product" }
+        featuredThreePiece:
+          type: array
+          items: { $ref: "#/components/schemas/Product" }
 
     HeroSlide:
       type: object
