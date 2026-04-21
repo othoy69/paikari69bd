@@ -1,36 +1,654 @@
 openapi: 3.1.0
 info:
-  # Do not change the title, if the title changes, the import paths will be broken
   title: Api
   version: 0.1.0
-  description: API specification
+  description: পাইকারি69bd.com wholesale marketplace API
 servers:
   - url: /api
     description: Base API path
 tags:
   - name: health
-    description: Health operations
+  - name: catalog
+  - name: cart
+  - name: orders
+  - name: auth
+  - name: account
+  - name: admin
 paths:
   /healthz:
     get:
       operationId: healthCheck
       tags: [health]
       summary: Health check
-      description: Returns server health status
       responses:
         "200":
           description: Healthy
           content:
             application/json:
+              schema: { $ref: "#/components/schemas/HealthStatus" }
+
+  /categories:
+    get:
+      operationId: listCategories
+      tags: [catalog]
+      summary: List all categories
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
               schema:
-                $ref: "#/components/schemas/HealthStatus"
+                type: array
+                items: { $ref: "#/components/schemas/Category" }
+
+  /products:
+    get:
+      operationId: listProducts
+      tags: [catalog]
+      summary: List products with filters
+      parameters:
+        - name: category
+          in: query
+          schema: { type: string }
+        - name: q
+          in: query
+          schema: { type: string }
+        - name: tag
+          in: query
+          schema: { type: string, enum: [flash, bestseller, new, featured] }
+        - name: limit
+          in: query
+          schema: { type: integer }
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { $ref: "#/components/schemas/Product" }
+
+  /products/{slug}:
+    get:
+      operationId: getProduct
+      tags: [catalog]
+      parameters:
+        - name: slug
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Product" }
+        "404":
+          description: Not found
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/ErrorResponse" }
+
+  /home/summary:
+    get:
+      operationId: getHomeSummary
+      tags: [catalog]
+      summary: Hero, flash deals, best sellers, trust strip aggregate
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/HomeSummary" }
+
+  /orders:
+    post:
+      operationId: createOrder
+      tags: [orders]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: "#/components/schemas/CreateOrderBody" }
+      responses:
+        "200":
+          description: Created
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Order" }
+
+  /orders/{orderNo}:
+    get:
+      operationId: getOrder
+      tags: [orders]
+      parameters:
+        - name: orderNo
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Order" }
+
+  /me/orders:
+    get:
+      operationId: listMyOrders
+      tags: [account]
+      parameters:
+        - name: phone
+          in: query
+          required: true
+          schema: { type: string }
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { $ref: "#/components/schemas/Order" }
+
+  /auth/request-otp:
+    post:
+      operationId: requestOtp
+      tags: [auth]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [identifier]
+              properties:
+                identifier: { type: string, description: phone or email }
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [sent, devOtp]
+                properties:
+                  sent: { type: boolean }
+                  devOtp: { type: string, description: shown for MVP only }
+
+  /auth/verify-otp:
+    post:
+      operationId: verifyOtp
+      tags: [auth]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [identifier, otp]
+              properties:
+                identifier: { type: string }
+                otp: { type: string }
+                name: { type: string }
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/AuthUser" }
+
+  /me:
+    get:
+      operationId: getMe
+      tags: [account]
+      parameters:
+        - name: identifier
+          in: query
+          required: true
+          schema: { type: string }
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/AuthUser" }
+    put:
+      operationId: updateMe
+      tags: [account]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [identifier]
+              properties:
+                identifier: { type: string }
+                name: { type: string }
+                email: { type: string }
+                phone: { type: string }
+                shopName: { type: string }
+                address: { type: string }
+                district: { type: string }
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/AuthUser" }
+
+  /admin/stats:
+    get:
+      operationId: getAdminStats
+      tags: [admin]
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/AdminStats" }
+
+  /admin/products:
+    get:
+      operationId: adminListProducts
+      tags: [admin]
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { $ref: "#/components/schemas/Product" }
+    post:
+      operationId: adminCreateProduct
+      tags: [admin]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: "#/components/schemas/ProductInput" }
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Product" }
+
+  /admin/products/{id}:
+    put:
+      operationId: adminUpdateProduct
+      tags: [admin]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: "#/components/schemas/ProductInput" }
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Product" }
+    delete:
+      operationId: adminDeleteProduct
+      tags: [admin]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [ok]
+                properties: { ok: { type: boolean } }
+
+  /admin/products/{id}/stock:
+    put:
+      operationId: adminUpdateStock
+      tags: [admin]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [stock]
+              properties:
+                stock: { type: integer }
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Product" }
+
+  /admin/orders:
+    get:
+      operationId: adminListOrders
+      tags: [admin]
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { $ref: "#/components/schemas/Order" }
+
+  /admin/orders/{orderNo}/status:
+    put:
+      operationId: adminUpdateOrderStatus
+      tags: [admin]
+      parameters:
+        - name: orderNo
+          in: path
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [status]
+              properties:
+                status: { $ref: "#/components/schemas/OrderStatus" }
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Order" }
+
 components:
   schemas:
     HealthStatus:
       type: object
+      required: [status]
       properties:
-        status:
-          type: string
-      required:
-        - status
+        status: { type: string }
 
+    ErrorResponse:
+      type: object
+      required: [error]
+      properties:
+        error: { type: string }
+
+    Category:
+      type: object
+      required: [slug, nameBn, nameEn, icon, productCount]
+      properties:
+        slug: { type: string }
+        nameBn: { type: string }
+        nameEn: { type: string }
+        icon: { type: string }
+        image: { type: string }
+        productCount: { type: integer }
+
+    PriceTier:
+      type: object
+      required: [minQty, price]
+      properties:
+        minQty: { type: integer }
+        price: { type: number }
+        label: { type: string }
+
+    Product:
+      type: object
+      required:
+        [
+          id,
+          slug,
+          titleBn,
+          titleEn,
+          category,
+          source,
+          image,
+          gallery,
+          oldPrice,
+          wholesalePrice,
+          moq,
+          tiers,
+          stock,
+          badges,
+          rating,
+          sold,
+          unit,
+          deliveryNote,
+        ]
+      properties:
+        id: { type: string }
+        slug: { type: string }
+        titleBn: { type: string }
+        titleEn: { type: string }
+        descriptionBn: { type: string }
+        category: { type: string }
+        categoryNameBn: { type: string }
+        source: { type: string, description: source/location }
+        image: { type: string }
+        gallery:
+          type: array
+          items: { type: string }
+        oldPrice: { type: number }
+        wholesalePrice: { type: number }
+        moq: { type: integer }
+        unit: { type: string }
+        tiers:
+          type: array
+          items: { $ref: "#/components/schemas/PriceTier" }
+        stock: { type: integer }
+        badges:
+          type: array
+          items: { type: string }
+        rating: { type: number }
+        sold: { type: integer }
+        deliveryNote: { type: string }
+        flashEndsAt: { type: string }
+
+    ProductInput:
+      type: object
+      required:
+        [titleBn, category, source, image, oldPrice, wholesalePrice, moq, stock]
+      properties:
+        titleBn: { type: string }
+        titleEn: { type: string }
+        descriptionBn: { type: string }
+        category: { type: string }
+        source: { type: string }
+        image: { type: string }
+        oldPrice: { type: number }
+        wholesalePrice: { type: number }
+        moq: { type: integer }
+        unit: { type: string }
+        stock: { type: integer }
+        badges:
+          type: array
+          items: { type: string }
+
+    HomeSummary:
+      type: object
+      required:
+        [
+          heroSlides,
+          categories,
+          flashDeals,
+          bestSellers,
+          newArrivals,
+          trustStats,
+        ]
+      properties:
+        heroSlides:
+          type: array
+          items: { $ref: "#/components/schemas/HeroSlide" }
+        categories:
+          type: array
+          items: { $ref: "#/components/schemas/Category" }
+        flashDeals:
+          type: array
+          items: { $ref: "#/components/schemas/Product" }
+        bestSellers:
+          type: array
+          items: { $ref: "#/components/schemas/Product" }
+        newArrivals:
+          type: array
+          items: { $ref: "#/components/schemas/Product" }
+        trustStats: { $ref: "#/components/schemas/TrustStats" }
+        flashEndsAt: { type: string }
+
+    HeroSlide:
+      type: object
+      required: [titleBn, subtitleBn, ctaText, ctaHref, image, accent]
+      properties:
+        titleBn: { type: string }
+        subtitleBn: { type: string }
+        ctaText: { type: string }
+        ctaHref: { type: string }
+        image: { type: string }
+        accent: { type: string }
+
+    TrustStats:
+      type: object
+      required: [resellers, ordersDelivered, districts, satisfaction]
+      properties:
+        resellers: { type: integer }
+        ordersDelivered: { type: integer }
+        districts: { type: integer }
+        satisfaction: { type: number }
+
+    CartLine:
+      type: object
+      required: [productId, qty]
+      properties:
+        productId: { type: string }
+        qty: { type: integer }
+
+    Address:
+      type: object
+      required: [name, phone, division, district, area, addressLine]
+      properties:
+        name: { type: string }
+        phone: { type: string }
+        division: { type: string }
+        district: { type: string }
+        area: { type: string }
+        addressLine: { type: string }
+        landmark: { type: string }
+        shopName: { type: string }
+
+    PaymentMethod:
+      type: string
+      enum: [bkash, nagad, rocket, bank, cod]
+
+    OrderStatus:
+      type: string
+      enum: [pending, confirmed, packed, shipped, delivered, cancelled]
+
+    CreateOrderBody:
+      type: object
+      required: [items, address, paymentMethod]
+      properties:
+        items:
+          type: array
+          items: { $ref: "#/components/schemas/CartLine" }
+        address: { $ref: "#/components/schemas/Address" }
+        paymentMethod: { $ref: "#/components/schemas/PaymentMethod" }
+        txnRef: { type: string }
+        note: { type: string }
+        userIdentifier: { type: string }
+
+    OrderItem:
+      type: object
+      required: [productId, titleBn, image, qty, unitPrice, lineTotal]
+      properties:
+        productId: { type: string }
+        titleBn: { type: string }
+        image: { type: string }
+        qty: { type: integer }
+        unitPrice: { type: number }
+        lineTotal: { type: number }
+
+    Order:
+      type: object
+      required:
+        [
+          orderNo,
+          createdAt,
+          status,
+          items,
+          address,
+          paymentMethod,
+          subtotal,
+          shipping,
+          total,
+        ]
+      properties:
+        orderNo: { type: string }
+        createdAt: { type: string }
+        status: { $ref: "#/components/schemas/OrderStatus" }
+        items:
+          type: array
+          items: { $ref: "#/components/schemas/OrderItem" }
+        address: { $ref: "#/components/schemas/Address" }
+        paymentMethod: { $ref: "#/components/schemas/PaymentMethod" }
+        txnRef: { type: string }
+        note: { type: string }
+        subtotal: { type: number }
+        shipping: { type: number }
+        savings: { type: number }
+        total: { type: number }
+        userIdentifier: { type: string }
+
+    AuthUser:
+      type: object
+      required: [identifier]
+      properties:
+        identifier: { type: string }
+        name: { type: string }
+        email: { type: string }
+        phone: { type: string }
+        shopName: { type: string }
+        address: { type: string }
+        district: { type: string }
+        createdAt: { type: string }
+
+    AdminStats:
+      type: object
+      required:
+        [
+          totalOrders,
+          pendingOrders,
+          totalRevenue,
+          totalProducts,
+          lowStockCount,
+          recentOrders,
+          topProducts,
+        ]
+      properties:
+        totalOrders: { type: integer }
+        pendingOrders: { type: integer }
+        totalRevenue: { type: number }
+        totalProducts: { type: integer }
+        lowStockCount: { type: integer }
+        recentOrders:
+          type: array
+          items: { $ref: "#/components/schemas/Order" }
+        topProducts:
+          type: array
+          items: { $ref: "#/components/schemas/Product" }
