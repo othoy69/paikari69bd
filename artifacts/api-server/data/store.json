@@ -1328,5 +1328,63 @@
   ],
   "orders": [],
   "users": [],
-  "otps": []
+  "otps": [],
+  "categories": [
+    {
+      "slug": "fashion",
+      "nameBn": "ফ্যাশন ও পোশাক",
+      "nameEn": "Fashion & Apparel",
+      "icon": "Shirt",
+      "productCount": 14
+    },
+    {
+      "slug": "electronics",
+      "nameBn": "ইলেকট্রনিক্স",
+      "nameEn": "Electronics",
+      "icon": "Smartphone",
+      "productCount": 2
+    },
+    {
+      "slug": "grocery",
+      "nameBn": "মুদি ও খাবার",
+      "nameEn": "Grocery & Food",
+      "icon": "ShoppingBasket",
+      "productCount": 2
+    },
+    {
+      "slug": "home",
+      "nameBn": "হোম ও কিচেন",
+      "nameEn": "Home & Kitchen",
+      "icon": "Home",
+      "productCount": 2
+    },
+    {
+      "slug": "beauty",
+      "nameBn": "বিউটি ও কেয়ার",
+      "nameEn": "Beauty & Care",
+      "icon": "Sparkles",
+      "productCount": 2
+    },
+    {
+      "slug": "kids",
+      "nameBn": "বাচ্চাদের পণ্য",
+      "nameEn": "Kids & Toys",
+      "icon": "Baby",
+      "productCount": 2
+    },
+    {
+      "slug": "stationery",
+      "nameBn": "স্টেশনারি",
+      "nameEn": "Stationery",
+      "icon": "Pencil",
+      "productCount": 2
+    },
+    {
+      "slug": "accessories",
+      "nameBn": "এক্সেসরিজ",
+      "nameEn": "Accessories",
+      "icon": "Watch",
+      "productCount": 2
+    }
+  ]
 }
