@@ -3,7 +3,8 @@ import { ProductCard } from "../components/product/ProductCard";
 import { FeaturedSegment } from "../components/product/FeaturedSegment";
 import { CountdownTimer } from "../components/common/CountdownTimer";
 import { PaymentBadges } from "../components/common/PaymentBadges";
-import { FacebookCTA, WhatsAppHelpStrip } from "../components/common/FacebookCTA";
+import { FacebookCTA } from "../components/common/FacebookCTA";
+import { ThreeFeatureBoxes } from "../components/common/ThreeFeatureBoxes";
 import { Skeleton } from "../components/ui/skeleton";
 import { Link } from "wouter";
 import {
@@ -75,10 +76,11 @@ export default function Home() {
         </Carousel>
       </section>
 
-      {/* WhatsApp help strip — visible right below hero */}
-      <WhatsAppHelpStrip />
+      {/* Three premium feature boxes — Jersey / Tangail Saree / Three-piece */}
+      <ThreeFeatureBoxes />
 
       {/* ─── HERO FEATURED SEGMENTS (most prominent) ─── */}
+      <div id="featured-jersey" className="scroll-mt-24 transition-all rounded-2xl md:rounded-3xl">
       <FeaturedSegment
         theme="jersey"
         eyebrow="মেগা অফার • জার্সি কালেকশন"
@@ -88,7 +90,9 @@ export default function Home() {
         ctaHref="/search?q=জার্সি"
         products={summary.featuredJerseys ?? []}
       />
+      </div>
 
+      <div id="featured-saree" className="scroll-mt-24 transition-all rounded-2xl md:rounded-3xl">
       <FeaturedSegment
         theme="saree"
         eyebrow="স্পেশাল কালেকশন • টাঙ্গাইল"
@@ -98,7 +102,9 @@ export default function Home() {
         ctaHref="/search?q=টাঙ্গাইল"
         products={summary.featuredSarees ?? []}
       />
+      </div>
 
+      <div id="featured-threepiece" className="scroll-mt-24 transition-all rounded-2xl md:rounded-3xl">
       <FeaturedSegment
         theme="threepiece"
         eyebrow="হট ট্রেন্ড • থ্রি-পিস কালেকশন"
@@ -108,6 +114,7 @@ export default function Home() {
         ctaHref="/search?q=থ্রি-পিস"
         products={summary.featuredThreePiece ?? []}
       />
+      </div>
 
       {/* Trust micro-bar */}
       <section className="container mx-auto px-3 md:px-4 mt-3">
