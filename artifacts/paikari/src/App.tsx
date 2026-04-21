@@ -6,6 +6,7 @@ import { CartProvider } from "@/contexts/CartContext";
 import { AuthProvider } from "@/contexts/AuthContext";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { WhatsAppFloating } from "@/components/common/WhatsAppButton";
 import { MobileNav } from "@/components/layout/MobileNav";
 import Home from "@/pages/Home";
 import Categories from "@/pages/Categories";
@@ -35,6 +36,7 @@ function PublicLayout({ children }: { children: React.ReactNode }) {
       <main className="flex-1">{children}</main>
       <Footer />
       <MobileNav />
+      <WhatsAppFloating />
     </div>
   );
 }

@@ -4,6 +4,7 @@ import { useCart } from "../../contexts/CartContext";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import { useState } from "react";
+import { WhatsAppButton, WA_DISPLAY } from "../common/WhatsAppButton";
 
 export function Header() {
   const { itemCount } = useCart();
@@ -18,14 +19,38 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/85 shadow-[0_1px_0_rgba(15,23,42,0.06)]">
       {/* Top utility bar - desktop only */}
-      <div className="hidden md:block bg-gradient-to-r from-orange-600 to-red-600 text-white text-xs">
-        <div className="container mx-auto px-4 h-7 flex items-center justify-between">
+      <div className="hidden md:block bg-gradient-to-r from-orange-600 via-red-500 to-orange-600 text-white text-xs">
+        <div className="container mx-auto px-4 h-8 flex items-center justify-between">
           <div className="flex items-center gap-4">
             <span className="flex items-center gap-1"><Truck className="w-3 h-3" /> সারা বাংলাদেশে দ্রুত ডেলিভারি</span>
             <span className="flex items-center gap-1"><ShieldCheck className="w-3 h-3" /> ১০০% নিরাপদ পেমেন্ট</span>
+            <span>• ২৪/৭ WhatsApp সাপোর্ট</span>
           </div>
-          <div>হটলাইন: <b>+৮৮০ ১৭০০-০০০০৬৯</b></div>
+          <div className="flex items-center gap-3">
+            <span>অর্ডার বা সাহায্যের জন্য WhatsApp:</span>
+            <a
+              href={`https://wa.me/8801872888954`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-extrabold underline-offset-2 hover:underline tabular-nums"
+            >
+              {WA_DISPLAY}
+            </a>
+          </div>
         </div>
+      </div>
+
+      {/* Mobile WhatsApp call-out strip */}
+      <div className="md:hidden bg-gradient-to-r from-emerald-600 to-teal-600 text-white text-[11px] px-3 py-1.5 flex items-center justify-between gap-2">
+        <span className="font-semibold leading-tight">যেকোনো প্রশ্নে WhatsApp করুন</span>
+        <a
+          href="https://wa.me/8801872888954"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-extrabold tabular-nums underline-offset-2 hover:underline"
+        >
+          {WA_DISPLAY} →
+        </a>
       </div>
 
       <div className="container mx-auto px-3 md:px-4 h-14 md:h-16 flex items-center justify-between gap-3">
@@ -49,7 +74,10 @@ export function Header() {
           </form>
         </div>
 
-        <div className="flex items-center gap-1">
+        <div className="flex items-center gap-1.5 md:gap-2">
+          <div className="hidden md:block">
+            <WhatsAppButton variant="compact" />
+          </div>
           <Button variant="ghost" size="icon" className="md:hidden" onClick={() => setLocation('/search')}>
             <Search className="h-5 w-5" />
           </Button>

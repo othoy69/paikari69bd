@@ -3,6 +3,7 @@ import { ProductCard } from "../components/product/ProductCard";
 import { FeaturedSegment } from "../components/product/FeaturedSegment";
 import { CountdownTimer } from "../components/common/CountdownTimer";
 import { PaymentBadges } from "../components/common/PaymentBadges";
+import { FacebookCTA, WhatsAppHelpStrip } from "../components/common/FacebookCTA";
 import { Skeleton } from "../components/ui/skeleton";
 import { Link } from "wouter";
 import {
@@ -73,6 +74,9 @@ export default function Home() {
           </div>
         </Carousel>
       </section>
+
+      {/* WhatsApp help strip — visible right below hero */}
+      <WhatsAppHelpStrip />
 
       {/* ─── HERO FEATURED SEGMENTS (most prominent) ─── */}
       <FeaturedSegment
@@ -238,6 +242,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Facebook page CTA — convert FB visitors */}
+      <FacebookCTA />
 
       {/* Payment Partners */}
       <section className="container mx-auto px-3 md:px-4 pb-6">
