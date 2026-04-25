@@ -1,7 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @plugin "@tailwindcss/typography";
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap');
 
 @custom-variant dark (&:is(.dark *));
 
@@ -203,8 +203,28 @@
   }
 
   body {
-    @apply font-sans antialiased bg-background text-foreground;
+    @apply antialiased bg-background text-foreground;
+    font-family: 'Hind Siliguri', 'Inter', system-ui, -apple-system, sans-serif;
   }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Hind Siliguri', 'Inter', system-ui, sans-serif;
+    letter-spacing: -0.01em;
+  }
+}
+
+@layer utilities {
+  @keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 4px 20px rgba(234, 88, 12, 0.5); }
+    50%      { box-shadow: 0 4px 36px rgba(234, 88, 12, 0.95); }
+  }
+  .animate-pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
+
+  @keyframes badge-blink {
+    0%, 100% { opacity: 1; }
+    50%      { opacity: 0.55; }
+  }
+  .animate-badge-blink { animation: badge-blink 1.6s ease-in-out infinite; }
 }
 
 @layer utilities {

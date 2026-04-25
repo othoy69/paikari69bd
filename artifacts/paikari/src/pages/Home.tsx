@@ -6,6 +6,7 @@ import { PaymentBadges } from "../components/common/PaymentBadges";
 import { FacebookCTA } from "../components/common/FacebookCTA";
 import { ThreeFeatureBoxes } from "../components/common/ThreeFeatureBoxes";
 import { WorldCupBanner } from "../components/common/WorldCupBanner";
+import { WhatsAppCtaSection } from "../components/common/WhatsAppCtaSection";
 import { Skeleton } from "../components/ui/skeleton";
 import { Link } from "wouter";
 import {
@@ -24,6 +25,9 @@ import {
   ShieldCheck,
   Headphones,
   RefreshCcw,
+  CheckCircle2,
+  MessageCircle,
+  AlertTriangle,
 } from "lucide-react";
 
 export default function Home() {
@@ -61,10 +65,15 @@ export default function Home() {
                     <h2 className="text-xl md:text-5xl font-extrabold text-white mb-2 md:mb-4 leading-tight">{slide.titleBn}</h2>
                     <p className="text-xs md:text-lg text-white/90 mb-3 md:mb-6 line-clamp-2">{slide.subtitleBn}</p>
                     <Link href={slide.ctaHref}>
-                      <button className="w-fit bg-gradient-to-r from-orange-500 to-red-500 text-white px-5 md:px-7 py-2 md:py-3 rounded-full font-bold shadow-lg hover:shadow-xl text-sm md:text-base transition-all">
+                      <button className="w-fit bg-gradient-to-r from-orange-500 to-red-500 text-white px-5 md:px-7 py-2 md:py-3 rounded-full font-bold shadow-lg hover:shadow-xl text-sm md:text-base transition-all animate-pulse-glow">
                         {slide.ctaText}
                       </button>
                     </Link>
+                    <p className="text-[10px] md:text-xs text-white/85 font-medium mt-2.5 md:mt-3 flex flex-wrap gap-x-3 gap-y-1">
+                      <span className="inline-flex items-center gap-1"><CheckCircle2 className="w-3 h-3 text-emerald-300" />৫০ হাজার+ সন্তুষ্ট রিসেলার</span>
+                      <span className="hidden md:inline-flex items-center gap-1"><Truck className="w-3 h-3 text-orange-300" />সারা বাংলাদেশে ডেলিভারি</span>
+                      <span className="inline-flex items-center gap-1"><MessageCircle className="w-3 h-3 text-emerald-300" />WhatsApp অর্ডার</span>
+                    </p>
                   </div>
                 </div>
               </CarouselItem>
@@ -190,6 +199,12 @@ export default function Home() {
                 </div>
               )}
             </div>
+            <div className="bg-white/95 backdrop-blur rounded-xl px-3 py-2 mb-3 flex items-center gap-2">
+              <AlertTriangle className="w-4 h-4 text-red-600 flex-shrink-0 animate-badge-blink" />
+              <p className="text-[11px] md:text-sm font-bold text-red-700 leading-tight">
+                সীমিত স্টক — অফার শেষ হওয়ার আগে এখনই অর্ডার করুন!
+              </p>
+            </div>
             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2 md:gap-3">
               {summary.flashDeals.map((p) => <ProductCard key={p.id} product={p} />)}
             </div>
@@ -253,6 +268,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Direct WhatsApp order CTA */}
+      <WhatsAppCtaSection />
 
       {/* Facebook page CTA — convert FB visitors */}
       <FacebookCTA />

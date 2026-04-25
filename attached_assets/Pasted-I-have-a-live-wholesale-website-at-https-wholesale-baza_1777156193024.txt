@@ -1,0 +1,205 @@
+I have a live wholesale website at https://wholesale-bazar--tashrifothoy.replit.app
+It is a single-file HTML/CSS/JS website for পাইকারি৬৯ (paikari69bd.com).
+
+DO NOT rebuild from scratch. ONLY improve and enhance the existing code.
+Read the current index.html fully first, then make targeted upgrades.
+
+=== UPGRADE LIST (apply ALL of these) ===
+
+--- 1. PERFORMANCE & META ---
+Add inside <head>:
+- <meta name="description" content="পাইকারি দামে জার্সি, টাঙ্গাইল শাড়ি, থ্রি-পিস — সরাসরি উৎস থেকে। সারা বাংলাদেশে ডেলিভারি।">
+- <meta property="og:title" content="পাইকারি৬৯ — পাইকারি দামে কিনুন, লাভে বিক্রি করুন">
+- <meta property="og:description" content="জার্সি, শাড়ি, থ্রি-পিস পাইকারি দামে। WhatsApp: 01872888954">
+- <meta property="og:image" content="https://paikari69bd.com/og-image.jpg">
+- <meta name="theme-color" content="#1a7f45">
+- <link rel="canonical" href="https://paikari69bd.com">
+These are critical for Facebook Ad link previews and SEO.
+
+--- 2. HERO SECTION ---
+If hero CTA button does not have pulse/glow animation, add this CSS:
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 4px 20px rgba(200,134,10,0.5); }
+  50% { box-shadow: 0 4px 40px rgba(200,134,10,0.9); }
+}
+.hero-cta { animation: pulse-glow 2s infinite; }
+
+Add below the main CTA button a secondary trust line:
+<p style="color:rgba(255,255,255,0.7);font-size:13px;margin-top:12px;">
+✅ ৫০০০+ সন্তুষ্ট ক্রেতা &nbsp;|&nbsp; 🚚 সারা বাংলাদেশে ডেলিভারি &nbsp;|&nbsp; 📲 WhatsApp অর্ডার
+</p>
+
+--- 3. COUNTDOWN TIMER ---
+If countdown timer exists but resets on page refresh, fix it to always count down to the NEXT midnight:
+function getNextMidnight() {
+  var now = new Date();
+  var midnight = new Date(now);
+  midnight.setHours(24, 0, 0, 0);
+  return midnight;
+}
+function updateTimer() {
+  var diff = getNextMidnight() - new Date();
+  var h = Math.floor(diff / 3600000);
+  var m = Math.floor((diff % 3600000) / 60000);
+  var s = Math.floor((diff % 60000) / 1000);
+  document.getElementById('cd-h').textContent = String(h).padStart(2,'0');
+  document.getElementById('cd-m').textContent = String(m).padStart(2,'0');
+  document.getElementById('cd-s').textContent = String(s).padStart(2,'0');
+}
+setInterval(updateTimer, 1000);
+updateTimer();
+
+--- 4. FLOATING WHATSAPP BUTTON ---
+If not already present, add fixed floating WhatsApp button:
+Position: fixed, bottom: 24px, right: 16px
+Size: 58px circle, background: #25d366
+Add bounce animation:
+@keyframes wa-bounce {
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-8px)}
+}
+.float-wa { animation: wa-bounce 3s infinite; }
+
+Add a tooltip label above it:
+"প্রশ্ন আছে? এখনই WhatsApp করুন!"
+Show on hover or always visible on mobile.
+Link: https://wa.me/8801872888954?text=আমি%20অর্ডার%20করতে%20চাই
+
+--- 5. PRODUCT CARDS — UPGRADE EACH CARD ---
+Every product card must have ALL of these elements:
+a) Big bold NEW price in green (৳XXX)
+b) Old price with strikethrough in gray
+c) Savings badge: green pill — "৳XXX সাশ্রয়"
+d) Stock warning in red — "⚠️ সীমিত স্টক"
+e) "Best Deal" or category badge top-left on image
+f) Green "অর্ডার করুন" button at bottom of card
+   → links to WhatsApp with product name in message
+
+If any card is missing any of these, add them now.
+
+--- 6. URGENCY ELEMENTS ---
+Add these urgency elements if missing:
+
+A) After each section heading, add a stock alert bar:
+<div style="background:#fdecea;border-left:4px solid #c0392b;border-radius:8px;
+padding:12px 14px;font-size:13px;font-weight:700;color:#c0392b;
+margin-bottom:16px;display:flex;align-items:center;gap:8px;">
+⚠️ সীমিত স্টক বাকি — এখনই অর্ডার না করলে মিস হয়ে যাবে!
+</div>
+
+B) Add blinking badge CSS if not present:
+@keyframes blink {
+  0%,100%{opacity:1} 50%{opacity:0.5}
+}
+.badge-hot { animation: blink 1.5s infinite; }
+
+--- 7. JERSEY SECTION — ADD PRICING TIERS ---
+If pricing tiers (১ পিস / ৫+ পিস / ১০+ পিস) are not clearly displayed, add a 3-column grid:
+
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:20px 0;">
+  <div style="background:white;border-radius:12px;padding:14px 8px;text-align:center;box-shadow:0 2px 10px rgba(0,0,0,0.08);">
+    <div style="font-size:12px;color:#666;margin-bottom:4px;">১ পিস</div>
+    <div style="font-size:16px;font-weight:700;color:#1a7f45;">স্বাভাবিক দাম</div>
+    <div style="font-size:11px;color:#999;">যেকোনো ডিজাইন</div>
+  </div>
+  <div style="background:#fff4d6;border:2px solid #c8860a;border-radius:12px;padding:14px 8px;text-align:center;">
+    <div style="font-size:12px;color:#7a5000;margin-bottom:4px;">৫+ পিস</div>
+    <div style="font-size:16px;font-weight:700;color:#c8860a;">বিশেষ দাম 🌟</div>
+    <div style="font-size:11px;color:#7a5000;">টিম অর্ডারে ছাড়</div>
+  </div>
+  <div style="background:white;border-radius:12px;padding:14px 8px;text-align:center;box-shadow:0 2px 10px rgba(0,0,0,0.08);">
+    <div style="font-size:12px;color:#666;margin-bottom:4px;">১০+ পিস</div>
+    <div style="font-size:16px;font-weight:700;color:#1a7f45;">পাইকারি অফার</div>
+    <div style="font-size:11px;color:#999;">সর্বোচ্চ ছাড়</div>
+  </div>
+</div>
+
+--- 8. WHATSAPP CTA SECTION ---
+Add a dedicated full-width WhatsApp section between Three-piece and Footer:
+
+<section style="background:linear-gradient(135deg,#0f5c28,#25a250);padding:40px 16px;text-align:center;">
+  <h3 style="color:white;font-size:22px;font-weight:700;margin-bottom:10px;">
+    📲 সরাসরি অর্ডার করুন WhatsApp-এ
+  </h3>
+  <p style="color:rgba(255,255,255,0.88);font-size:14px;margin-bottom:24px;">
+    প্রশ্ন আছে? দাম জানতে চান? ক্যাটালগ দেখতে চান?<br>
+    আমরা সবসময় রেডি — এখনই মেসেজ করুন!
+  </p>
+  <a href="https://wa.me/8801872888954?text=আমি%20পাইকারি৬৯%20থেকে%20অর্ডার%20করতে%20চাই"
+     target="_blank"
+     style="display:inline-flex;align-items:center;gap:10px;background:white;
+     color:#128c52;font-size:17px;font-weight:700;padding:16px 32px;
+     border-radius:50px;text-decoration:none;box-shadow:0 4px 20px rgba(0,0,0,0.2);">
+    💬 WhatsApp করুন এখনই
+  </a>
+  <div style="color:white;font-size:20px;font-weight:700;margin-top:16px;letter-spacing:1px;">
+    📞 01872-888954
+  </div>
+</section>
+
+--- 9. SCROLL ANIMATIONS ---
+Add this JS at bottom of page if not present:
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(el => {
+    if (el.isIntersecting) {
+      el.target.style.opacity = '1';
+      el.target.style.transform = 'translateY(0)';
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll(
+  '.product-card, .feature-card, .why-card, .price-tier, section'
+).forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(24px)';
+  el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+  observer.observe(el);
+});
+
+--- 10. FOOTER — ADD FACEBOOK LINKS ---
+Make sure footer includes both Facebook page links as clickable blocks:
+
+Jersey Page:
+href="https://web.facebook.com/yourwholesalejerseybd/"
+Label: "📘 জার্সি Facebook পেজ"
+
+Saree Page:
+href="https://web.facebook.com/profile.php?id=61587901051190"
+Label: "📘 শাড়ি Facebook পেজ"
+
+Style each as a dark rounded block with hover effect.
+
+Also confirm footer has:
+- WhatsApp: 01872-888954 (clickable wa.me link)
+- Address: ঢাকা, বাংলাদেশ
+- Copyright: © ২০২৫ পাইকারি৬৯
+
+--- 11. MOBILE FIXES ---
+Check and fix:
+- Nav links don't overflow on 375px screen
+  Fix: hide text nav links on mobile, show only logo + WhatsApp button
+- All buttons minimum height: 44px (thumb-friendly)
+- Font size minimum: 13px everywhere
+- No horizontal scroll on any section
+- Product grid: exactly 2 columns on mobile, never 3
+
+--- 12. FONT UPGRADE ---
+If Google Fonts not loaded, add to <head>:
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Tiro+Bangla:ital@0;1&display=swap" rel="stylesheet">
+
+Apply to body:
+font-family: 'Hind Siliguri', sans-serif;
+
+Apply to all headings (h1, h2, h3):
+font-family: 'Tiro Bangla', serif;
+
+=== RULES ===
+- Do NOT delete any existing section
+- Do NOT change existing WhatsApp number
+- Do NOT change brand name or colors
+- Only ADD or IMPROVE what's missing or weak
+- Keep all changes in the single index.html file
+- Test that page still loads correctly after changes
+- Make sure ALL WhatsApp links use: https://wa.me/8801872888954
