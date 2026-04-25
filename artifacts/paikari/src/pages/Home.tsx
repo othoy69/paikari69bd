@@ -5,6 +5,7 @@ import { CountdownTimer } from "../components/common/CountdownTimer";
 import { PaymentBadges } from "../components/common/PaymentBadges";
 import { FacebookCTA } from "../components/common/FacebookCTA";
 import { ThreeFeatureBoxes } from "../components/common/ThreeFeatureBoxes";
+import { WorldCupBanner } from "../components/common/WorldCupBanner";
 import { Skeleton } from "../components/ui/skeleton";
 import { Link } from "wouter";
 import {
@@ -75,6 +76,9 @@ export default function Home() {
           </div>
         </Carousel>
       </section>
+
+      {/* World Cup 2026 — Best Premium Hot Item */}
+      <WorldCupBanner endsAt={summary.flashEndsAt} />
 
       {/* Three premium feature boxes — Jersey / Tangail Saree / Three-piece */}
       <ThreeFeatureBoxes />

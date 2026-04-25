@@ -47,7 +47,14 @@ router.get("/home/summary", (_req, res) => {
     .sort((a, b) => b.sold - a.sold)
     .slice(0, 8);
   const newArrivals = products.filter((p) => (p.tags ?? []).includes("new")).slice(0, 8);
-  const featuredJerseys = products.filter((p) => (p.tags ?? []).includes("featured-jersey")).slice(0, 6);
+  const featuredJerseys = products
+    .filter((p) => (p.tags ?? []).includes("featured-jersey"))
+    .sort((a, b) => {
+      const aWc = a.titleEn?.toLowerCase().includes("world cup") ? 0 : 1;
+      const bWc = b.titleEn?.toLowerCase().includes("world cup") ? 0 : 1;
+      return aWc - bWc;
+    })
+    .slice(0, 6);
   const featuredSarees = products.filter((p) => (p.tags ?? []).includes("featured-saree")).slice(0, 6);
   const featuredThreePiece = products.filter((p) => (p.tags ?? []).includes("featured-threepiece")).slice(0, 6);
   const heroSlides = [

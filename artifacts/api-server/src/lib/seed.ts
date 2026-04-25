@@ -400,6 +400,31 @@ const SEED: Seed[] = [
   },
   // ─── FEATURED: JERSEYS ───────────────────────────────────────────────
   {
+    titleBn: "ওয়ার্ল্ড কাপ ২০২৬ অফিসিয়াল জার্সি (প্রিমিয়াম এডিশন)",
+    titleEn: "World Cup 2026 Official Jersey Premium",
+    descriptionBn:
+      "FIFA ওয়ার্ল্ড কাপ ২০২৬ স্পেশাল এডিশন জার্সি — প্রিমিয়াম ড্রাই-ফিট পলিয়েস্টার, AAA+ কোয়ালিটি, স্বাস ক্ষমতা সম্পন্ন কাপড়। সাইজ M, L, XL, XXL মিক্স প্যাক। সব দল অ্যাভেইলেবল — আর্জেন্টিনা, ব্রাজিল, পর্তুগাল, ফ্রান্স, স্পেন, জার্মানি। সীমিত স্টক, সীমিত সময়ের অফার!",
+    category: "fashion",
+    source: "ইসলামপুর, ঢাকা — ডাইরেক্ট ইম্পোর্ট",
+    image: "photo-1577223625816-7546f13df25d",
+    oldPrice: 1450,
+    wholesalePrice: 580,
+    moq: 5,
+    unit: "পিস",
+    tiers: [
+      { minQty: 1, price: 750, label: "১ পিস (খুচরা)" },
+      { minQty: 5, price: 580, label: "৫+ পিস (পাইকারি)" },
+      { minQty: 10, price: 490, label: "১০+ পিস (বেস্ট ডিল)" },
+    ],
+    stock: 45,
+    badges: ["হট", "নতুন", "বেস্টসেলার"],
+    rating: 4.9,
+    sold: 5240,
+    deliveryNote: "সারাদেশে ১-৩ দিন • ঢাকার ভিতরে সেইম ডে ডেলিভারি",
+    flashEndsAt,
+    tags: ["bestseller", "flash", "new", "featured-jersey"],
+  },
+  {
     titleBn: "আর্জেন্টিনা হোম জার্সি ২০২৬ (ফ্যান এডিশন)",
     titleEn: "Argentina Home Jersey 2026 Fan",
     descriptionBn: "ড্রাই-ফিট পলিয়েস্টার, স্বাস ক্ষমতা সম্পন্ন কাপড়। সাইজ M, L, XL, XXL মিক্স প্যাক। AAA কোয়ালিটি।",
