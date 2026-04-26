@@ -1,0 +1,1671 @@
+{
+  "products": [
+    {
+      "id": "7d937j8s",
+      "slug": "premium-cotton-panjabi-7mx0",
+      "categoryNameBn": "ফ্যাশন ও পোশাক",
+      "gallery": [
+        "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=900&q=70",
+        "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=900&q=70",
+        "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=900&q=70"
+      ],
+      "titleBn": "প্রিমিয়াম কটন পাঞ্জাবি (পুরুষ)",
+      "titleEn": "Premium Cotton Panjabi",
+      "descriptionBn": "১০০% কটন কাপড়, রিসেলারদের জন্য বিশেষ পাইকারি দাম। সাইজ M, L, XL, XXL মিক্স প্যাক।",
+      "category": "fashion",
+      "source": "কেরানীগঞ্জ, ঢাকা",
+      "image": "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=900&q=70",
+      "oldPrice": 950,
+      "wholesalePrice": 520,
+      "moq": 6,
+      "unit": "পিস",
+      "tiers": [
+        {
+          "minQty": 1,
+          "price": 750,
+          "label": "১ পিস (খুচরা)"
+        },
+        {
+          "minQty": 6,
+          "price": 520,
+          "label": "৬+ পিস"
+        },
+        {
+          "minQty": 24,
+          "price": 470,
+          "label": "২৪+ পিস (কার্টন)"
+        }
+      ],
+      "stock": 320,
+      "badges": [
+        "ফ্ল্যাশ ডিল",
+        "বেস্টসেলার"
+      ],
+      "rating": 4.7,
+      "sold": 1840,
+      "deliveryNote": "ঢাকার ভিতরে ১-২ দিন, ঢাকার বাইরে ২-৪ দিন",
+      "flashEndsAt": "2026-04-28T20:24:40.078Z",
+      "tags": [
+        "flash",
+        "bestseller"
+      ]
+    },
+    {
+      "id": "epw5rd2c",
+      "slug": "three-piece-winter-collection-mxuw",
+      "categoryNameBn": "ফ্যাশন ও পোশাক",
+      "gallery": [
+        "https://images.unsplash.com/photo-1583391733956-6c78276477e2?auto=format&fit=crop&w=900&q=70",
+        "https://images.unsplash.com/photo-1583391733956-6c78276477e2?auto=format&fit=crop&w=900&q=70",
+        "https://images.unsplash.com/photo-1583391733956-6c78276477e2?auto=format&fit=crop&w=900&q=70"
+      ],
+      "titleBn": "থ্রি-পিস উইন্টার কালেকশন",
+      "titleEn": "Three Piece Winter Collection",
+      "descriptionBn": "জর্জেট কাপড়, এমব্রয়ডারি ডিজাইন। মিক্স কালার প্যাক।",
+      "category": "fashion",
+      "source": "ইসলামপুর, ঢাকা",
+      "image": "https://images.unsplash.com/photo-1583391733956-6c78276477e2?auto=format&fit=crop&w=900&q=70",
+      "oldPrice": 1850,
+      "wholesalePrice": 980,
+      "moq": 4,
+      "unit": "সেট",
+      "tiers": [
+        {
+          "minQty": 1,
+          "price": 1200,
+          "label": "১ সেট"
+        },
+        {
+          "minQty": 4,
+          "price": 980,
+          "label": "৪+ সেট"
+        },
+        {
+          "minQty": 12,
+          "price": 880,
+          "label": "১২+ সেট"
+        }
+      ],
+      "stock": 145,
+      "badges": [
+        "নতুন"
+      ],
+      "rating": 4.6,
+      "sold": 720,
+      "deliveryNote": "সারাদেশে কুরিয়ারে ডেলিভারি",
+      "tags": [
+        "new",
+        "featured"
+      ]
+    },
+    {
+      "id": "fqhgf86x",
+      "slug": "smartwatch-y68-wewb",
+      "categoryNameBn": "ইলেকট্রনিক্স",
+      "gallery": [
+        "https://images.unsplash.com/photo-1546868871-7041f2a55e12?auto=format&fit=crop&w=900&q=70",
+        "https://images.unsplash.com/photo-1546868871-7041f2a55e12?auto=format&fit=crop&w=900&q=70",
+        "https://images.unsplash.com/photo-1546868871-7041f2a55e12?auto=format&fit=crop&w=900&q=70"
+      ],
+      "titleBn": "স্মার্টওয়াচ Y68 (মিক্স কালার)",
+      "titleEn": "Smartwatch Y68",
+      "descriptionBn": "ব্লুটুথ কল, হার্ট-রেট, স্টেপ কাউন্টার। রিসেলারদের জন্য পাইকারি প্যাক।",
+      "category": "electronics",
+      "source": "ইম্পোর্টেড, চট্টগ্রাম পোর্ট",
+      "image": "https://images.unsplash.com/photo-1546868871-7041f2a55e12?auto=format&fit=crop&w=900&q=70",
+      "oldPrice": 850,
+      "wholesalePrice": 320,
+      "moq": 10,
+      "unit": "পিস",
+      "tiers": [
+        {
+          "minQty": 1,
+          "price": 450,
+          "label": "১ পিস"
+        },
+        {
+          "minQty": 10,
+          "price": 320,
+          "label": "১০+ পিস"
+        },
+        {
+          "minQty": 50,
+          "price": 285,
+          "label": "৫০+ পিস"
+        }
+      ],
+      "stock": 540,
+      "badges": [
+        "ফ্ল্যাশ ডিল",
+        "হট"
+      ],
+      "rating": 4.4,
+      "sold": 3210,
+      "deliveryNote": "১-৩ দিনে সারাদেশে",
+      "flashEndsAt": "2026-04-28T20:24:40.078Z",
+      "tags": [
+        "flash",
+        "bestseller"
+      ]
+    },
+    {
+      "id": "ui85rr5g",
+      "slug": "tws-pro-earbuds-ywdt",
+      "categoryNameBn": "ইলেকট্রনিক্স",
+      "gallery": [
+        "https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?auto=format&fit=crop&w=900&q=70",
+        "https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?auto=format&fit=crop&w=900&q=70",
+        "https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?auto=format&fit=crop&w=900&q=70"
+      ],
+      "titleBn": "ব্লুটুথ ইয়ারবাড TWS Pro",
+      "titleEn": "TWS Pro Earbuds",
+      "descriptionBn": "এনসি সাপোর্টেড, ৪+২০ ঘন্টা ব্যাকআপ। ভালো বিল্ড কোয়ালিটি।",
+      "category": "electronics",
+      "source": "ইম্পোর্টেড, চট্টগ্রাম",
+      "image": "https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?auto=format&fit=crop&w=900&q=70",
+      "oldPrice": 1200,
+      "wholesalePrice": 480,
+      "moq": 10,
+      "unit": "পিস",
+      "tiers": [
+        {
+          "minQty": 1,
+          "price": 650,
+          "label": "১ পিস"
+        },
+        {
+          "minQty": 10,
+          "price": 480,
+          "label": "১০+ পিস"
+        },
+        {
+          "minQty": 30,
+          "price": 430,
+          "label": "৩০+ পিস"
+        }
+      ],
+      "stock": 280,
+      "badges": [
+        "বেস্টসেলার"
+      ],
+      "rating": 4.5,
+      "sold": 2450,
+      "deliveryNote": "১-৩ দিনে সারাদেশে",
+      "tags": [
+        "bestseller"
+      ]
+    },
+    {
+      "id": "x3rqfmab",
+      "slug": "premium-basmati-rice-5kg-r8tk",
+      "categoryNameBn": "মুদি ও খাবার",
+      "gallery": [
+        "https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=900&q=70",
+        "https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=900&q=70",
+        "https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=900&q=70"
+      ],
+      "titleBn": "প্রিমিয়াম বাসমতি চাল ৫ কেজি",
+      "titleEn": "Premium Basmati Rice 5kg",
+      "descriptionBn": "এক্সপোর্ট কোয়ালিটি, ১২ মাস স্টোরেজ। মুদি দোকানদারদের জন্য পাইকারি।",
+      "category": "grocery",
+      "source": "নাটোর",
+      "image": "https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=900&q=70",
+      "oldPrice": 720,
+      "wholesalePrice": 540,
+      "moq": 5,
+      "unit": "ব্যাগ",
+      "tiers": [
+        {
+          "minQty": 1,
+          "price": 620,
+          "label": "১ ব্যাগ"
+        },
+        {
+          "minQty": 5,
+          "price": 540,
+          "label": "৫+ ব্যাগ"
+        },
+        {
+          "minQty": 20,
+          "price": 510,
+          "label": "২০+ ব্যাগ (বস্তা)"
+        }
+      ],
+      "stock": 800,
+      "badges": [
+        "ফ্রেশ স্টক"
+      ],
+      "rating": 4.8,
+      "sold": 5400,
+      "deliveryNote": "ঢাকা ও আশেপাশে দ্রুত ডেলিভারি",
+      "tags": [
+        "bestseller"
+      ]
+    },
+    {
+      "id": "8c5d0iur",
+      "slug": "soybean-oil-5l-pd8s",
+      "categoryNameBn": "মুদি ও খাবার",
+      "gallery": [
+        "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=900&q=70",
+        "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=900&q=70",
+        "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=900&q=70"
+      ],
+      "titleBn": "সয়াবিন তেল ৫ লিটার (পেট বোতল)",
+      "titleEn": "Soybean Oil 5L",
+      "descriptionBn": "রিফাইন্ড সয়াবিন তেল, ব্র্যান্ডেড সিল প্যাক।",
+      "category": "grocery",
+      "source": "ময়মনসিংহ ডিপো",
+      "image": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=900&q=70",
+      "oldPrice": 950,
+      "wholesalePrice": 820,
+      "moq": 6,
+      "unit": "বোতল",
+      "tiers": [
+        {
+          "minQty": 1,
+          "price": 880,
+          "label": "১ বোতল"
+        },
+        {
+          "minQty": 6,
+          "price": 820,
+          "label": "৬+ বোতল"
+        },
+        {
+          "minQty": 24,
+          "price": 790,
+          "label": "২৪+ বোতল"
+        }
+      ],
+      "stock": 220,
+      "badges": [],
+      "rating": 4.5,
+      "sold": 1900,
+      "deliveryNote": "ঢাকার ভিতরে ১ দিনে"
+    },
+    {
+      "id": "pqerdf7d",
+      "slug": "steel-cookware-set-7pc-m3cp",
+      "categoryNameBn": "হোম ও কিচেন",
+      "gallery": [
+        "https://images.unsplash.com/photo-1584990347449-a08a6d8d0d7e?auto=format&fit=crop&w=900&q=70",
+        "https://images.unsplash.com/photo-1584990347449-a08a6d8d0d7e?auto=format&fit=crop&w=900&q=70",
+        "https://images.unsplash.com/photo-1584990347449-a08a6d8d0d7e?auto=format&fit=crop&w=900&q=70"
+      ],
+      "titleBn": "স্টেইনলেস স্টিল কুকওয়্যার সেট (৭ পিস)",
+      "titleEn": "Steel Cookware Set 7pc",
+      "descriptionBn": "টেকসই বিল্ড, ইন্ডাকশন কম্প্যাটিবল।",
+      "category": "home",
+      "source": "নারায়ণগঞ্জ",
+      "image": "https://images.unsplash.com/photo-1584990347449-a08a6d8d0d7e?auto=format&fit=crop&w=900&q=70",
+      "oldPrice": 3200,
+      "wholesalePrice": 1980,
+      "moq": 3,
+      "unit": "সেট",
+      "tiers": [
+        {
+          "minQty": 1,
+          "price": 2400,
+          "label": "১ সেট"
+        },
+        {
+          "minQty": 3,
+          "price": 1980,
+          "label": "৩+ সেট"
+        },
+        {
+          "minQty": 10,
+          "price": 1850,
+          "label": "১০+ সেট"
+        }
+      ],
+      "stock": 88,
+      "badges": [
+        "নতুন"
+      ],
+      "rating": 4.6,
+      "sold": 410,
+      "deliveryNote": "৩-৫ দিনে সারাদেশে",
+      "tags": [
+        "new"
+      ]
+    },
+    {
+      "id": "o4omoy1v",
+      "slug": "non-stick-fry-pan-jvbn",
+      "categoryNameBn": "হোম ও কিচেন",
+      "gallery": [
+        "https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=900&q=70",
+        "https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=900&q=70",
+        "https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=900&q=70"
+      ],
+      "titleBn": "নন-স্টিক ফ্রাই প্যান ২৬cm",
+      "titleEn": "Non-stick Fry Pan",
+      "descriptionBn": "৫ লেয়ার নন-স্টিক কোটিং।",
+      "category": "home",
+      "source": "চট্টগ্রাম",
+      "image": "https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=900&q=70",
+      "oldPrice": 950,
+      "wholesalePrice": 540,
+      "moq": 6,
+      "unit": "পিস",
+      "tiers": [
+        {
+          "minQty": 1,
+          "price": 720,
+          "label": "১ পিস"
+        },
+        {
+          "minQty": 6,
+          "price": 540,
+          "label": "৬+ পিস"
+        },
+        {
+          "minQty": 24,
+          "price": 495,
+          "label": "২৪+ পিস"
+        }
+      ],
+      "stock": 175,
+      "badges": [],
+      "rating": 4.4,
+      "sold": 980,
+      "deliveryNote": "৩-৫ দিনে"
+    },
+    {
+      "id": "5xltpzsq",
+      "slug": "herbal-face-wash-y0ry",
+      "categoryNameBn": "বিউটি ও কেয়ার",
+      "gallery": [
+        "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=900&q=70",
+        "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=900&q=70",
+        "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=900&q=70"
+      ],
+      "titleBn": "হারবাল ফেস ওয়াশ ১০০ml",
+      "titleEn": "Herbal Face Wash",
+      "descriptionBn": "নিম ও তুলসী ব্লেন্ড, সব স্কিন টাইপের জন্য।",
+      "category": "beauty",
+      "source": "লোকাল ব্র্যান্ড, ঢাকা",
+      "image": "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=900&q=70",
+      "oldPrice": 220,
+      "wholesalePrice": 95,
+      "moq": 24,
+      "unit": "পিস",
+      "tiers": [
+        {
+          "minQty": 1,
+          "price": 150,
+          "label": "১ পিস"
+        },
+        {
+          "minQty": 24,
+          "price": 95,
+          "label": "২৪+ পিস (কার্টন)"
+        },
+        {
+          "minQty": 144,
+          "price": 85,
+          "label": "১৪৪+ পিস (১২ কার্টন)"
+        }
+      ],
+      "stock": 1200,
+      "badges": [
+        "বেস্টসেলার"
+      ],
+      "rating": 4.7,
+      "sold": 8900,
+      "deliveryNote": "১-৩ দিনে সারাদেশে",
+      "tags": [
+        "bestseller"
+      ]
+    },
+    {
+      "id": "7vg5x870",
+      "slug": "lipstick-set-vno4",
+      "categoryNameBn": "বিউটি ও কেয়ার",
+      "gallery": [
+        "https://images.unsplash.com/photo-1586495777744-4413f21062fa?auto=format&fit=crop&w=900&q=70",
+        "https://images.unsplash.com/photo-1586495777744-4413f21062fa?auto=format&fit=crop&w=900&q=70",
+        "https://images.unsplash.com/photo-1586495777744-4413f21062fa?auto=format&fit=crop&w=900&q=70"
+      ],
+      "titleBn": "লিপস্টিক সেট (৬ কালার)",
+      "titleEn": "Lipstick Set",
+      "descriptionBn": "ম্যাট ফিনিশ, লং লাস্টিং।",
+      "category": "beauty",
+      "source": "ইম্পোর্টেড",
+      "image": "https://images.unsplash.com/photo-1586495777744-4413f21062fa?auto=format&fit=crop&w=900&q=70",
+      "oldPrice": 850,
+      "wholesalePrice": 380,
+      "moq": 6,
+      "unit": "সেট",
+      "tiers": [
+        {
+          "minQty": 1,
+          "price": 520,
+          "label": "১ সেট"
+        },
+        {
+          "minQty": 6,
+          "price": 380,
+          "label": "৬+ সেট"
+        },
+        {
+          "minQty": 24,
+          "price": 340,
+          "label": "২৪+ সেট"
+        }
+      ],
+      "stock": 95,
+      "badges": [
+        "ফ্ল্যাশ ডিল"
+      ],
+      "rating": 4.5,
+      "sold": 670,
+      "deliveryNote": "১-৩ দিনে",
+      "flashEndsAt": "2026-04-28T20:24:40.078Z",
+      "tags": [
+        "flash"
+      ]
+    },
+    {
+      "id": "75ohh8hc",
+      "slug": "baby-diaper-family-pack-4d4k",
+      "categoryNameBn": "বাচ্চাদের পণ্য",
+      "gallery": [
+        "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?auto=format&fit=crop&w=900&q=70",
+        "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?auto=format&fit=crop&w=900&q=70",
+        "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?auto=format&fit=crop&w=900&q=70"
+      ],
+      "titleBn": "বাচ্চাদের ফ্যামিলি প্যাক ডায়াপার",
+      "titleEn": "Baby Diaper Family Pack",
+      "descriptionBn": "M/L/XL সাইজ মিক্স, ৪৮ পিস।",
+      "category": "kids",
+      "source": "ইম্পোর্টেড",
+      "image": "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?auto=format&fit=crop&w=900&q=70",
+      "oldPrice": 1450,
+      "wholesalePrice": 980,
+      "moq": 4,
+      "unit": "প্যাক",
+      "tiers": [
+        {
+          "minQty": 1,
+          "price": 1180,
+          "label": "১ প্যাক"
+        },
+        {
+          "minQty": 4,
+          "price": 980,
+          "label": "৪+ প্যাক"
+        },
+        {
+          "minQty": 12,
+          "price": 920,
+          "label": "১২+ প্যাক"
+        }
+      ],
+      "stock": 210,
+      "badges": [
+        "বেস্টসেলার"
+      ],
+      "rating": 4.7,
+      "sold": 1320,
+      "deliveryNote": "১-৩ দিনে",
+      "tags": [
+        "bestseller"
+      ]
+    },
+    {
+      "id": "r5572q47",
+      "slug": "wooden-educational-toys-7c0a",
+      "categoryNameBn": "বাচ্চাদের পণ্য",
+      "gallery": [
+        "https://images.unsplash.com/photo-1558877385-81a1c7e67d72?auto=format&fit=crop&w=900&q=70",
+        "https://images.unsplash.com/photo-1558877385-81a1c7e67d72?auto=format&fit=crop&w=900&q=70",
+        "https://images.unsplash.com/photo-1558877385-81a1c7e67d72?auto=format&fit=crop&w=900&q=70"
+      ],
+      "titleBn": "কাঠের শিক্ষামূলক খেলনা সেট",
+      "titleEn": "Wooden Educational Toys",
+      "descriptionBn": "নন-টক্সিক পেইন্ট, ৩+ বছর বয়সী বাচ্চাদের জন্য।",
+      "category": "kids",
+      "source": "লোকাল হ্যান্ডমেইড",
+      "image": "https://images.unsplash.com/photo-1558877385-81a1c7e67d72?auto=format&fit=crop&w=900&q=70",
+      "oldPrice": 750,
+      "wholesalePrice": 420,
+      "moq": 6,
+      "unit": "সেট",
+      "tiers": [
+        {
+          "minQty": 1,
+          "price": 580,
+          "label": "১ সেট"
+        },
+        {
+          "minQty": 6,
+          "price": 420,
+          "label": "৬+ সেট"
+        },
+        {
+          "minQty": 20,
+          "price": 380,
+          "label": "২০+ সেট"
+        }
+      ],
+      "stock": 130,
+      "badges": [
+        "নতুন"
+      ],
+      "rating": 4.6,
+      "sold": 245,
+      "deliveryNote": "৩-৫ দিনে",
+      "tags": [
+        "new"
+      ]
+    },
+    {
+      "id": "iixnrjga",
+      "slug": "a4-paper-ream-500pc-6crc",
+      "categoryNameBn": "স্টেশনারি",
+      "gallery": [
+        "https://images.unsplash.com/photo-1583521214690-73421a1829a9?auto=format&fit=crop&w=900&q=70",
+        "https://images.unsplash.com/photo-1583521214690-73421a1829a9?auto=format&fit=crop&w=900&q=70",
+        "https://images.unsplash.com/photo-1583521214690-73421a1829a9?auto=format&fit=crop&w=900&q=70"
+      ],
+      "titleBn": "প্রিমিয়াম এ৪ পেপার রিম (৫০০ পিস)",
+      "titleEn": "A4 Paper Ream 500pc",
+      "descriptionBn": "৭৫ জিএসএম, অফিস ও স্কুল ইউজের জন্য।",
+      "category": "stationery",
+      "source": "লোকাল মিল",
+      "image": "https://images.unsplash.com/photo-1583521214690-73421a1829a9?auto=format&fit=crop&w=900&q=70",
+      "oldPrice": 480,
+      "wholesalePrice": 360,
+      "moq": 10,
+      "unit": "রিম",
+      "tiers": [
+        {
+          "minQty": 1,
+          "price": 420,
+          "label": "১ রিম"
+        },
+        {
+          "minQty": 10,
+          "price": 360,
+          "label": "১০+ রিম"
+        },
+        {
+          "minQty": 50,
+          "price": 340,
+          "label": "৫০+ রিম"
+        }
+      ],
+      "stock": 600,
+      "badges": [],
+      "rating": 4.6,
+      "sold": 2100,
+      "deliveryNote": "১-৩ দিনে"
+    },
+    {
+      "id": "kxtjc3r4",
+      "slug": "gel-pen-box-bhjf",
+      "categoryNameBn": "স্টেশনারি",
+      "gallery": [
+        "https://images.unsplash.com/photo-1517242810446-cc8951b2be40?auto=format&fit=crop&w=900&q=70",
+        "https://images.unsplash.com/photo-1517242810446-cc8951b2be40?auto=format&fit=crop&w=900&q=70",
+        "https://images.unsplash.com/photo-1517242810446-cc8951b2be40?auto=format&fit=crop&w=900&q=70"
+      ],
+      "titleBn": "প্রিমিয়াম জেল কলম (৫০ পিস বক্স)",
+      "titleEn": "Gel Pen Box",
+      "descriptionBn": "স্মুথ রাইটিং, ০.৫mm টিপ।",
+      "category": "stationery",
+      "source": "ইম্পোর্টেড",
+      "image": "https://images.unsplash.com/photo-1517242810446-cc8951b2be40?auto=format&fit=crop&w=900&q=70",
+      "oldPrice": 350,
+      "wholesalePrice": 195,
+      "moq": 12,
+      "unit": "বক্স",
+      "tiers": [
+        {
+          "minQty": 1,
+          "price": 250,
+          "label": "১ বক্স"
+        },
+        {
+          "minQty": 12,
+          "price": 195,
+          "label": "১২+ বক্স"
+        },
+        {
+          "minQty": 60,
+          "price": 175,
+          "label": "৬০+ বক্স"
+        }
+      ],
+      "stock": 410,
+      "badges": [
+        "বেস্টসেলার"
+      ],
+      "rating": 4.5,
+      "sold": 3400,
+      "deliveryNote": "১-৩ দিনে",
+      "tags": [
+        "bestseller"
+      ]
+    },
+    {
+      "id": "wiuhqdci",
+      "slug": "men-leather-belt-6pw3",
+      "categoryNameBn": "এক্সেসরিজ",
+      "gallery": [
+        "https://images.unsplash.com/photo-1624222247344-550fb60583a8?auto=format&fit=crop&w=900&q=70",
+        "https://images.unsplash.com/photo-1624222247344-550fb60583a8?auto=format&fit=crop&w=900&q=70",
+        "https://images.unsplash.com/photo-1624222247344-550fb60583a8?auto=format&fit=crop&w=900&q=70"
+      ],
+      "titleBn": "ছেলেদের লেদার বেল্ট (মিক্স)",
+      "titleEn": "Men Leather Belt",
+      "descriptionBn": "জেনুইন PU লেদার, অটো-লক বাকল।",
+      "category": "accessories",
+      "source": "ইসলামপুর, ঢাকা",
+      "image": "https://images.unsplash.com/photo-1624222247344-550fb60583a8?auto=format&fit=crop&w=900&q=70",
+      "oldPrice": 650,
+      "wholesalePrice": 280,
+      "moq": 12,
+      "unit": "পিস",
+      "tiers": [
+        {
+          "minQty": 1,
+          "price": 380,
+          "label": "১ পিস"
+        },
+        {
+          "minQty": 12,
+          "price": 280,
+          "label": "১২+ পিস"
+        },
+        {
+          "minQty": 48,
+          "price": 250,
+          "label": "৪৮+ পিস"
+        }
+      ],
+      "stock": 320,
+      "badges": [
+        "ফ্ল্যাশ ডিল"
+      ],
+      "rating": 4.4,
+      "sold": 1450,
+      "deliveryNote": "১-৩ দিনে",
+      "flashEndsAt": "2026-04-28T20:24:40.078Z",
+      "tags": [
+        "flash",
+        "bestseller"
+      ]
+    },
+    {
+      "id": "fv5uph9y",
+      "slug": "hijab-pin-set-jf9b",
+      "categoryNameBn": "এক্সেসরিজ",
+      "gallery": [
+        "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=900&q=70",
+        "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=900&q=70",
+        "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=900&q=70"
+      ],
+      "titleBn": "মেয়েদের হিজাব পিন সেট (২৪ পিস)",
+      "titleEn": "Hijab Pin Set",
+      "descriptionBn": "মিক্স ডিজাইন, প্রিমিয়াম স্টোন ফিনিশ।",
+      "category": "accessories",
+      "source": "লোকাল",
+      "image": "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=900&q=70",
+      "oldPrice": 420,
+      "wholesalePrice": 175,
+      "moq": 12,
+      "unit": "সেট",
+      "tiers": [
+        {
+          "minQty": 1,
+          "price": 240,
+          "label": "১ সেট"
+        },
+        {
+          "minQty": 12,
+          "price": 175,
+          "label": "১২+ সেট"
+        },
+        {
+          "minQty": 60,
+          "price": 155,
+          "label": "৬০+ সেট"
+        }
+      ],
+      "stock": 540,
+      "badges": [
+        "নতুন"
+      ],
+      "rating": 4.6,
+      "sold": 880,
+      "deliveryNote": "১-৩ দিনে",
+      "tags": [
+        "new"
+      ]
+    },
+    {
+      "id": "4qp561q0",
+      "slug": "world-cup-2026-official-jersey-premium-2ztv",
+      "categoryNameBn": "ফ্যাশন ও পোশাক",
+      "gallery": [
+        "https://images.unsplash.com/photo-1577223625816-7546f13df25d?auto=format&fit=crop&w=900&q=70",
+        "https://images.unsplash.com/photo-1577223625816-7546f13df25d?auto=format&fit=crop&w=900&q=70",
+        "https://images.unsplash.com/photo-1577223625816-7546f13df25d?auto=format&fit=crop&w=900&q=70"
+      ],
+      "titleBn": "ওয়ার্ল্ড কাপ ২০২৬ অফিসিয়াল জার্সি (প্রিমিয়াম এডিশন)",
+      "titleEn": "World Cup 2026 Official Jersey Premium",
+      "descriptionBn": "FIFA ওয়ার্ল্ড কাপ ২০২৬ স্পেশাল এডিশন জার্সি — প্রিমিয়াম ড্রাই-ফিট পলিয়েস্টার, AAA+ কোয়ালিটি, স্বাস ক্ষমতা সম্পন্ন কাপড়। সাইজ M, L, XL, XXL মিক্স প্যাক। সব দল অ্যাভেইলেবল — আর্জেন্টিনা, ব্রাজিল, পর্তুগাল, ফ্রান্স, স্পেন, জার্মানি। সীমিত স্টক, সীমিত সময়ের অফার!",
+      "category": "fashion",
+      "source": "ইসলামপুর, ঢাকা — ডাইরেক্ট ইম্পোর্ট",
+      "image": "https://images.unsplash.com/photo-1577223625816-7546f13df25d?auto=format&fit=crop&w=900&q=70",
+      "oldPrice": 1450,
+      "wholesalePrice": 580,
+      "moq": 5,
+      "unit": "পিস",
+      "tiers": [
+        {
+          "minQty": 1,
+          "price": 750,
+          "label": "১ পিস (খুচরা)"
+        },
+        {
+          "minQty": 5,
+          "price": 580,
+          "label": "৫+ পিস (পাইকারি)"
+        },
+        {
+          "minQty": 10,
+          "price": 490,
+          "label": "১০+ পিস (বেস্ট ডিল)"
+        }
+      ],
+      "stock": 45,
+      "badges": [
+        "হট",
+        "নতুন",
+        "বেস্টসেলার"
+      ],
+      "rating": 4.9,
+      "sold": 5240,
+      "deliveryNote": "সারাদেশে ১-৩ দিন • ঢাকার ভিতরে সেইম ডে ডেলিভারি",
+      "flashEndsAt": "2026-04-28T20:24:40.078Z",
+      "tags": [
+        "bestseller",
+        "flash",
+        "new",
+        "featured-jersey"
+      ]
+    },
+    {
+      "id": "28edhd0a",
+      "slug": "argentina-home-jersey-2026-fan-vzdy",
+      "categoryNameBn": "ফ্যাশন ও পোশাক",
+      "gallery": [
+        "https://images.unsplash.com/photo-1556906781-9a412961c28c?auto=format&fit=crop&w=900&q=70",
+        "https://images.unsplash.com/photo-1556906781-9a412961c28c?auto=format&fit=crop&w=900&q=70",
+        "https://images.unsplash.com/photo-1556906781-9a412961c28c?auto=format&fit=crop&w=900&q=70"
+      ],
+      "titleBn": "আর্জেন্টিনা হোম জার্সি ২০২৬ (ফ্যান এডিশন)",
+      "titleEn": "Argentina Home Jersey 2026 Fan",
+      "descriptionBn": "ড্রাই-ফিট পলিয়েস্টার, স্বাস ক্ষমতা সম্পন্ন কাপড়। সাইজ M, L, XL, XXL মিক্স প্যাক। AAA কোয়ালিটি।",
+      "category": "fashion",
+      "source": "ইসলামপুর, ঢাকা",
+      "image": "https://images.unsplash.com/photo-1556906781-9a412961c28c?auto=format&fit=crop&w=900&q=70",
+      "oldPrice": 950,
+      "wholesalePrice": 420,
+      "moq": 5,
+      "unit": "পিস",
+      "tiers": [
+        {
+          "minQty": 1,
+          "price": 550,
+          "label": "১ পিস"
+        },
+        {
+          "minQty": 5,
+          "price": 420,
+          "label": "৫+ পিস"
+        },
+        {
+          "minQty": 10,
+          "price": 360,
+          "label": "১০+ পিস"
+        }
+      ],
+      "stock": 540,
+      "badges": [
+        "হট",
+        "বেস্টসেলার"
+      ],
+      "rating": 4.8,
+      "sold": 3120,
+      "deliveryNote": "সারাদেশে ১-৩ দিন",
+      "flashEndsAt": "2026-04-28T20:24:40.078Z",
+      "tags": [
+        "bestseller",
+        "featured-jersey"
+      ]
+    },
+    {
+      "id": "gtm30fux",
+      "slug": "brazil-home-jersey-2026-player-mo23",
+      "categoryNameBn": "ফ্যাশন ও পোশাক",
+      "gallery": [
+        "https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=900&q=70",
+        "https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=900&q=70",
+        "https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=900&q=70"
+      ],
+      "titleBn": "ব্রাজিল হোম জার্সি ২০২৬ (প্লেয়ার এডিশন)",
+      "titleEn": "Brazil Home Jersey 2026 Player",
+      "descriptionBn": "প্রিমিয়াম স্পোর্ট কাপড়, পেশাদার ফিনিশিং। নাম-নাম্বার প্রিন্ট অপশন আছে।",
+      "category": "fashion",
+      "source": "ইসলামপুর, ঢাকা",
+      "image": "https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=900&q=70",
+      "oldPrice": 1100,
+      "wholesalePrice": 480,
+      "moq": 5,
+      "unit": "পিস",
+      "tiers": [
+        {
+          "minQty": 1,
+          "price": 620,
+          "label": "১ পিস"
+        },
+        {
+          "minQty": 5,
+          "price": 480,
+          "label": "৫+ পিস"
+        },
+        {
+          "minQty": 10,
+          "price": 410,
+          "label": "১০+ পিস"
+        }
+      ],
+      "stock": 410,
+      "badges": [
+        "হট"
+      ],
+      "rating": 4.7,
+      "sold": 2240,
+      "deliveryNote": "সারাদেশে ১-৩ দিন",
+      "tags": [
+        "featured-jersey"
+      ]
+    },
+    {
+      "id": "u8ba7q1d",
+      "slug": "bangladesh-cricket-jersey-2026-cx6r",
+      "categoryNameBn": "ফ্যাশন ও পোশাক",
+      "gallery": [
+        "https://images.unsplash.com/photo-1551958219-acbc608c6377?auto=format&fit=crop&w=900&q=70",
+        "https://images.unsplash.com/photo-1551958219-acbc608c6377?auto=format&fit=crop&w=900&q=70",
+        "https://images.unsplash.com/photo-1551958219-acbc608c6377?auto=format&fit=crop&w=900&q=70"
+      ],
+      "titleBn": "বাংলাদেশ ক্রিকেট জার্সি ২০২৬",
+      "titleEn": "Bangladesh Cricket Jersey 2026",
+      "descriptionBn": "অরিজিনাল ফ্যান এডিশন, BCB স্টাইল। মিক্স সাইজ প্যাক।",
+      "category": "fashion",
+      "source": "ইসলামপুর, ঢাকা",
+      "image": "https://images.unsplash.com/photo-1551958219-acbc608c6377?auto=format&fit=crop&w=900&q=70",
+      "oldPrice": 890,
+      "wholesalePrice": 390,
+      "moq": 5,
+      "unit": "পিস",
+      "tiers": [
+        {
+          "minQty": 1,
+          "price": 520,
+          "label": "১ পিস"
+        },
+        {
+          "minQty": 5,
+          "price": 390,
+          "label": "৫+ পিস"
+        },
+        {
+          "minQty": 10,
+          "price": 330,
+          "label": "১০+ পিস"
+        }
+      ],
+      "stock": 620,
+      "badges": [
+        "বেস্টসেলার"
+      ],
+      "rating": 4.9,
+      "sold": 4180,
+      "deliveryNote": "সারাদেশে ১-৩ দিন",
+      "tags": [
+        "bestseller",
+        "featured-jersey"
+      ]
+    },
+    {
+      "id": "d0jwkbwq",
+      "slug": "portugal-away-jersey-2026-v2gv",
+      "categoryNameBn": "ফ্যাশন ও পোশাক",
+      "gallery": [
+        "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=70",
+        "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=70",
+        "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=70"
+      ],
+      "titleBn": "পর্তুগাল অ্যাওয়ে জার্সি ২০২৬",
+      "titleEn": "Portugal Away Jersey 2026",
+      "descriptionBn": "সাদা-মেরুন প্রিমিয়াম এডিশন। লাইট-ওয়েট, কুইক ড্রাই।",
+      "category": "fashion",
+      "source": "ইসলামপুর, ঢাকা",
+      "image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=70",
+      "oldPrice": 1050,
+      "wholesalePrice": 450,
+      "moq": 5,
+      "unit": "পিস",
+      "tiers": [
+        {
+          "minQty": 1,
+          "price": 590,
+          "label": "১ পিস"
+        },
+        {
+          "minQty": 5,
+          "price": 450,
+          "label": "৫+ পিস"
+        },
+        {
+          "minQty": 10,
+          "price": 385,
+          "label": "১০+ পিস"
+        }
+      ],
+      "stock": 380,
+      "badges": [
+        "নতুন"
+      ],
+      "rating": 4.6,
+      "sold": 1380,
+      "deliveryNote": "সারাদেশে ১-৩ দিন",
+      "tags": [
+        "featured-jersey"
+      ]
+    },
+    {
+      "id": "k6zjkx93",
+      "slug": "tangail-half-silk-saree-original-b2jv",
+      "categoryNameBn": "ফ্যাশন ও পোশাক",
+      "gallery": [
+        "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=900&q=70",
+        "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=900&q=70",
+        "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=900&q=70"
+      ],
+      "titleBn": "টাঙ্গাইল হাফ সিল্ক শাড়ি (অরিজিনাল)",
+      "titleEn": "Tangail Half Silk Saree Original",
+      "descriptionBn": "টাঙ্গাইলের তাঁতিদের হাতে বোনা, ১০০% অথেনটিক হাফ সিল্ক। ব্লাউজ পিস সহ। মিক্স কালার ৬টি ডিজাইন।",
+      "category": "fashion",
+      "source": "টাঙ্গাইল",
+      "image": "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=900&q=70",
+      "oldPrice": 2400,
+      "wholesalePrice": 1180,
+      "moq": 5,
+      "unit": "পিস",
+      "tiers": [
+        {
+          "minQty": 1,
+          "price": 1450,
+          "label": "১ পিস"
+        },
+        {
+          "minQty": 5,
+          "price": 1180,
+          "label": "৫+ পিস"
+        },
+        {
+          "minQty": 10,
+          "price": 1050,
+          "label": "১০+ পিস"
+        }
+      ],
+      "stock": 220,
+      "badges": [
+        "হট",
+        "বেস্টসেলার"
+      ],
+      "rating": 4.9,
+      "sold": 1640,
+      "deliveryNote": "সারাদেশে কুরিয়ারে ২-৪ দিন",
+      "flashEndsAt": "2026-04-28T20:24:40.078Z",
+      "tags": [
+        "bestseller",
+        "featured-saree"
+      ]
+    },
+    {
+      "id": "nuvel4ns",
+      "slug": "tangail-jamdani-saree-premium-levb",
+      "categoryNameBn": "ফ্যাশন ও পোশাক",
+      "gallery": [
+        "https://images.unsplash.com/photo-1583391733981-3eef1d12d889?auto=format&fit=crop&w=900&q=70",
+        "https://images.unsplash.com/photo-1583391733981-3eef1d12d889?auto=format&fit=crop&w=900&q=70",
+        "https://images.unsplash.com/photo-1583391733981-3eef1d12d889?auto=format&fit=crop&w=900&q=70"
+      ],
+      "titleBn": "টাঙ্গাইল জামদানি শাড়ি (প্রিমিয়াম)",
+      "titleEn": "Tangail Jamdani Saree Premium",
+      "descriptionBn": "ঐতিহ্যবাহী জামদানি বুনন, রিচ আঁচল ডিজাইন। হাত বুননের পিউর কাপড়।",
+      "category": "fashion",
+      "source": "টাঙ্গাইল",
+      "image": "https://images.unsplash.com/photo-1583391733981-3eef1d12d889?auto=format&fit=crop&w=900&q=70",
+      "oldPrice": 3200,
+      "wholesalePrice": 1650,
+      "moq": 5,
+      "unit": "পিস",
+      "tiers": [
+        {
+          "minQty": 1,
+          "price": 1990,
+          "label": "১ পিস"
+        },
+        {
+          "minQty": 5,
+          "price": 1650,
+          "label": "৫+ পিস"
+        },
+        {
+          "minQty": 10,
+          "price": 1450,
+          "label": "১০+ পিস"
+        }
+      ],
+      "stock": 145,
+      "badges": [
+        "হট"
+      ],
+      "rating": 4.8,
+      "sold": 920,
+      "deliveryNote": "সারাদেশে কুরিয়ারে ২-৪ দিন",
+      "tags": [
+        "featured-saree"
+      ]
+    },
+    {
+      "id": "7fboaq2i",
+      "slug": "tangail-cotton-tant-saree-daily-63ch",
+      "categoryNameBn": "ফ্যাশন ও পোশাক",
+      "gallery": [
+        "https://images.unsplash.com/photo-1594387303048-3aa31b3f88f5?auto=format&fit=crop&w=900&q=70",
+        "https://images.unsplash.com/photo-1594387303048-3aa31b3f88f5?auto=format&fit=crop&w=900&q=70",
+        "https://images.unsplash.com/photo-1594387303048-3aa31b3f88f5?auto=format&fit=crop&w=900&q=70"
+      ],
+      "titleBn": "টাঙ্গাইল কটন তাঁত শাড়ি (ডেইলি)",
+      "titleEn": "Tangail Cotton Tant Saree Daily",
+      "descriptionBn": "১০০% কটন, আরামদায়ক ডেইলি ওয়্যার। হালকা ও নরম। মিক্স ১২ কালার।",
+      "category": "fashion",
+      "source": "টাঙ্গাইল",
+      "image": "https://images.unsplash.com/photo-1594387303048-3aa31b3f88f5?auto=format&fit=crop&w=900&q=70",
+      "oldPrice": 1450,
+      "wholesalePrice": 720,
+      "moq": 5,
+      "unit": "পিস",
+      "tiers": [
+        {
+          "minQty": 1,
+          "price": 890,
+          "label": "১ পিস"
+        },
+        {
+          "minQty": 5,
+          "price": 720,
+          "label": "৫+ পিস"
+        },
+        {
+          "minQty": 10,
+          "price": 640,
+          "label": "১০+ পিস"
+        }
+      ],
+      "stock": 480,
+      "badges": [
+        "বেস্টসেলার"
+      ],
+      "rating": 4.7,
+      "sold": 2840,
+      "deliveryNote": "সারাদেশে কুরিয়ারে ২-৪ দিন",
+      "tags": [
+        "bestseller",
+        "featured-saree"
+      ]
+    },
+    {
+      "id": "g6gl0320",
+      "slug": "tangail-soft-silk-benarasi-look-9l7l",
+      "categoryNameBn": "ফ্যাশন ও পোশাক",
+      "gallery": [
+        "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=900&q=70",
+        "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=900&q=70",
+        "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=900&q=70"
+      ],
+      "titleBn": "টাঙ্গাইল সফট সিল্ক বেনারসি লুক",
+      "titleEn": "Tangail Soft Silk Benarasi Look",
+      "descriptionBn": "বেনারসি স্টাইলের রিচ ডিজাইন, বিয়ে ও পার্টি ওয়্যার।",
+      "category": "fashion",
+      "source": "টাঙ্গাইল",
+      "image": "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=900&q=70",
+      "oldPrice": 2850,
+      "wholesalePrice": 1380,
+      "moq": 5,
+      "unit": "পিস",
+      "tiers": [
+        {
+          "minQty": 1,
+          "price": 1720,
+          "label": "১ পিস"
+        },
+        {
+          "minQty": 5,
+          "price": 1380,
+          "label": "৫+ পিস"
+        },
+        {
+          "minQty": 10,
+          "price": 1210,
+          "label": "১০+ পিস"
+        }
+      ],
+      "stock": 180,
+      "badges": [
+        "নতুন"
+      ],
+      "rating": 4.7,
+      "sold": 760,
+      "deliveryNote": "সারাদেশে কুরিয়ারে ২-৪ দিন",
+      "tags": [
+        "featured-saree"
+      ]
+    },
+    {
+      "id": "oymtjxpu",
+      "slug": "premium-georgette-three-piece-embroidery-8bui",
+      "categoryNameBn": "ফ্যাশন ও পোশাক",
+      "gallery": [
+        "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=900&q=70",
+        "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=900&q=70",
+        "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=900&q=70"
+      ],
+      "titleBn": "প্রিমিয়াম জর্জেট থ্রি-পিস (এমব্রয়ডারি)",
+      "titleEn": "Premium Georgette Three Piece Embroidery",
+      "descriptionBn": "ভারি এমব্রয়ডারি কাজ, স্টোন ওয়ার্ক। দোপাট্টা ও সালোয়ার সহ ফুল সেট।",
+      "category": "fashion",
+      "source": "ইসলামপুর, ঢাকা",
+      "image": "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=900&q=70",
+      "oldPrice": 2200,
+      "wholesalePrice": 1050,
+      "moq": 5,
+      "unit": "সেট",
+      "tiers": [
+        {
+          "minQty": 1,
+          "price": 1320,
+          "label": "১ সেট"
+        },
+        {
+          "minQty": 5,
+          "price": 1050,
+          "label": "৫+ সেট"
+        },
+        {
+          "minQty": 10,
+          "price": 920,
+          "label": "১০+ সেট"
+        }
+      ],
+      "stock": 280,
+      "badges": [
+        "হট",
+        "বেস্টসেলার"
+      ],
+      "rating": 4.8,
+      "sold": 1980,
+      "deliveryNote": "সারাদেশে ১-৩ দিন",
+      "flashEndsAt": "2026-04-28T20:24:40.078Z",
+      "tags": [
+        "bestseller",
+        "featured-threepiece"
+      ]
+    },
+    {
+      "id": "dipa4277",
+      "slug": "lawn-cotton-three-piece-summer-qz9f",
+      "categoryNameBn": "ফ্যাশন ও পোশাক",
+      "gallery": [
+        "https://images.unsplash.com/photo-1583391733956-6c78276477e2?auto=format&fit=crop&w=900&q=70",
+        "https://images.unsplash.com/photo-1583391733956-6c78276477e2?auto=format&fit=crop&w=900&q=70",
+        "https://images.unsplash.com/photo-1583391733956-6c78276477e2?auto=format&fit=crop&w=900&q=70"
+      ],
+      "titleBn": "লন কটন থ্রি-পিস কালেকশন (গ্রীষ্মকাল)",
+      "titleEn": "Lawn Cotton Three Piece Summer",
+      "descriptionBn": "পাকিস্তানি লন প্রিন্ট, হালকা কাপড়, গরমে আরামদায়ক। মিক্স ৮টি ডিজাইন।",
+      "category": "fashion",
+      "source": "ইসলামপুর, ঢাকা",
+      "image": "https://images.unsplash.com/photo-1583391733956-6c78276477e2?auto=format&fit=crop&w=900&q=70",
+      "oldPrice": 1850,
+      "wholesalePrice": 880,
+      "moq": 5,
+      "unit": "সেট",
+      "tiers": [
+        {
+          "minQty": 1,
+          "price": 1100,
+          "label": "১ সেট"
+        },
+        {
+          "minQty": 5,
+          "price": 880,
+          "label": "৫+ সেট"
+        },
+        {
+          "minQty": 10,
+          "price": 770,
+          "label": "১০+ সেট"
+        }
+      ],
+      "stock": 360,
+      "badges": [
+        "বেস্টসেলার"
+      ],
+      "rating": 4.7,
+      "sold": 2410,
+      "deliveryNote": "সারাদেশে ১-৩ দিন",
+      "tags": [
+        "bestseller",
+        "featured-threepiece"
+      ]
+    },
+    {
+      "id": "dieq9hce",
+      "slug": "indian-unstitched-three-piece-party-brmn",
+      "categoryNameBn": "ফ্যাশন ও পোশাক",
+      "gallery": [
+        "https://images.unsplash.com/photo-1594387303048-3aa31b3f88f5?auto=format&fit=crop&w=900&q=70",
+        "https://images.unsplash.com/photo-1594387303048-3aa31b3f88f5?auto=format&fit=crop&w=900&q=70",
+        "https://images.unsplash.com/photo-1594387303048-3aa31b3f88f5?auto=format&fit=crop&w=900&q=70"
+      ],
+      "titleBn": "ইন্ডিয়ান আনস্টিচড থ্রি-পিস (পার্টি)",
+      "titleEn": "Indian Unstitched Three Piece Party",
+      "descriptionBn": "ভারি পার্টি ওয়্যার, রিচ ফেব্রিক ও ডিজাইন। বিয়ে ও অনুষ্ঠানের জন্য।",
+      "category": "fashion",
+      "source": "ইসলামপুর, ঢাকা",
+      "image": "https://images.unsplash.com/photo-1594387303048-3aa31b3f88f5?auto=format&fit=crop&w=900&q=70",
+      "oldPrice": 2650,
+      "wholesalePrice": 1280,
+      "moq": 5,
+      "unit": "সেট",
+      "tiers": [
+        {
+          "minQty": 1,
+          "price": 1620,
+          "label": "১ সেট"
+        },
+        {
+          "minQty": 5,
+          "price": 1280,
+          "label": "৫+ সেট"
+        },
+        {
+          "minQty": 10,
+          "price": 1120,
+          "label": "১০+ সেট"
+        }
+      ],
+      "stock": 200,
+      "badges": [
+        "হট",
+        "নতুন"
+      ],
+      "rating": 4.8,
+      "sold": 1140,
+      "deliveryNote": "সারাদেশে ১-৩ দিন",
+      "tags": [
+        "featured-threepiece"
+      ]
+    },
+    {
+      "id": "jc4ubf2d",
+      "slug": "printed-cotton-three-piece-casual-4iv5",
+      "categoryNameBn": "ফ্যাশন ও পোশাক",
+      "gallery": [
+        "https://images.unsplash.com/photo-1583391733956-6c78276477e2?auto=format&fit=crop&w=900&q=70",
+        "https://images.unsplash.com/photo-1583391733956-6c78276477e2?auto=format&fit=crop&w=900&q=70",
+        "https://images.unsplash.com/photo-1583391733956-6c78276477e2?auto=format&fit=crop&w=900&q=70"
+      ],
+      "titleBn": "প্রিন্ট সুতি থ্রি-পিস (ক্যাজুয়াল)",
+      "titleEn": "Printed Cotton Three Piece Casual",
+      "descriptionBn": "১০০% কটন, ডেইলি ওয়্যার। মিক্স কালার ১০টি ডিজাইন।",
+      "category": "fashion",
+      "source": "নারায়ণগঞ্জ",
+      "image": "https://images.unsplash.com/photo-1583391733956-6c78276477e2?auto=format&fit=crop&w=900&q=70",
+      "oldPrice": 1350,
+      "wholesalePrice": 650,
+      "moq": 5,
+      "unit": "সেট",
+      "tiers": [
+        {
+          "minQty": 1,
+          "price": 820,
+          "label": "১ সেট"
+        },
+        {
+          "minQty": 5,
+          "price": 650,
+          "label": "৫+ সেট"
+        },
+        {
+          "minQty": 10,
+          "price": 570,
+          "label": "১০+ সেট"
+        }
+      ],
+      "stock": 540,
+      "badges": [
+        "বেস্টসেলার"
+      ],
+      "rating": 4.6,
+      "sold": 3210,
+      "deliveryNote": "সারাদেশে ১-৩ দিন",
+      "tags": [
+        "bestseller",
+        "featured-threepiece"
+      ]
+    }
+  ],
+  "orders": [],
+  "users": [],
+  "otps": [],
+  "reviews": [
+    {
+      "id": "0jlh6eru",
+      "customerName": "মোঃ রফিকুল ইসলাম",
+      "customerPhone": "01711-234567",
+      "productTitleBn": "ওয়ার্ল্ড কাপ ২০২৬ অফিসিয়াল জার্সি",
+      "rating": 5,
+      "text": "অসাধারণ কোয়ালিটি! ১০ পিস নিয়েছিলাম, সবগুলোর কাপড় খুব ভালো। দাম অনেক কম পেয়েছি অন্য জায়গার তুলনায়।",
+      "status": "approved",
+      "featured": true,
+      "createdAt": "2026-04-24T20:24:40.083Z"
+    },
+    {
+      "id": "ir82embi",
+      "customerName": "শাহানা বেগম",
+      "customerPhone": "01812-345678",
+      "productTitleBn": "টাঙ্গাইল হাফ সিল্ক শাড়ি",
+      "rating": 5,
+      "text": "সরাসরি তাঁতি থেকে যেমন বললো, আসলেও সেরকমই। কালার একদম আসল। আমার দোকানের সব কাস্টমার পছন্দ করেছে।",
+      "status": "approved",
+      "featured": true,
+      "createdAt": "2026-04-21T20:24:40.083Z"
+    },
+    {
+      "id": "c151wcim",
+      "customerName": "ফাহিম আহমেদ",
+      "customerPhone": "01900-456789",
+      "productTitleBn": "প্রিমিয়াম থ্রি-পিস",
+      "rating": 4,
+      "text": "ডেলিভারি ২ দিনে পেয়েছি ঢাকার বাইরে। প্যাকিং খুব ভালো ছিল। আবার অর্ডার করব।",
+      "status": "approved",
+      "featured": true,
+      "createdAt": "2026-04-19T20:24:40.083Z"
+    },
+    {
+      "id": "q4z3qcxu",
+      "customerName": "নাসরিন আক্তার",
+      "rating": 5,
+      "text": "৫ পিস টিয়ারে দাম খুবই সাশ্রয়ী। রিসেলার হিসেবে আমার লাভ হচ্ছে।",
+      "status": "pending",
+      "featured": false,
+      "createdAt": "2026-04-25T20:24:40.083Z"
+    },
+    {
+      "id": "dofuxa6f",
+      "customerName": "Anonymous",
+      "rating": 1,
+      "text": "spam content xxxxxx",
+      "status": "pending",
+      "featured": false,
+      "createdAt": "2026-04-26T19:24:40.083Z"
+    }
+  ],
+  "stockLogs": [],
+  "smsLogs": [],
+  "txnLogs": [],
+  "settings": {
+    "payment": {
+      "enabledMethods": {
+        "bkash": true,
+        "nagad": true,
+        "rocket": true,
+        "bank": true,
+        "cod": true,
+        "uddoktapay": false
+      },
+      "uddoktapay": {
+        "enabled": false,
+        "mode": "test",
+        "apiBaseUrl": "https://sandbox.uddoktapay.com/api",
+        "apiKey": "",
+        "secretKey": "",
+        "webhookUrl": "https://paikari69bd.com/api/uddoktapay/webhook",
+        "successUrl": "https://paikari69bd.com/order/success",
+        "cancelUrl": "https://paikari69bd.com/order/cancel",
+        "ipnUrl": "https://paikari69bd.com/api/uddoktapay/ipn"
+      },
+      "manualNumbers": {
+        "bkash": "01700-000069",
+        "nagad": "01700-000069",
+        "rocket": "01700-0000691",
+        "bankInfo": "Dutch-Bangla Bank • A/C: 1234567890123 • Paikari69bd Ltd"
+      }
+    },
+    "sms": {
+      "provider": "BulkSMSBD",
+      "apiUrl": "https://bulksmsbd.net/api/smsapi",
+      "apiKey": "",
+      "senderId": "Paikari69",
+      "mode": "test",
+      "templates": {
+        "otp": "আপনার পাইকারি69bd OTP কোড: {code}। কোডটি ৫ মিনিটের জন্য বৈধ।",
+        "orderConfirm": "ধন্যবাদ! আপনার অর্ডার {orderNo} (৳{total}) কনফার্ম হয়েছে। ডেলিভারি ১-৩ দিনে।",
+        "paymentConfirm": "পেমেন্ট প্রাপ্ত। অর্ডার {orderNo} এর ৳{total} টাকা পেয়েছি। ধন্যবাদ।",
+        "shipped": "আপনার অর্ডার {orderNo} পাঠিয়ে দেওয়া হয়েছে। শীঘ্রই পেয়ে যাবেন।",
+        "delivered": "অর্ডার {orderNo} সফলভাবে ডেলিভার হয়েছে। আবার অর্ডার করুন paikari69bd.com",
+        "cancelled": "দুঃখিত, আপনার অর্ডার {orderNo} বাতিল হয়েছে। প্রশ্ন থাকলে: 01872-888954"
+      }
+    },
+    "courier": {
+      "defaultProvider": "steadfast",
+      "steadfast": {
+        "enabled": false,
+        "mode": "test",
+        "apiBaseUrl": "https://portal.packzy.com/api/v1",
+        "apiKey": "",
+        "secretKey": "",
+        "notifyUrl": "https://paikari69bd.com/api/courier/steadfast/webhook"
+      },
+      "pathao": {
+        "enabled": false,
+        "clientId": "",
+        "clientSecret": ""
+      },
+      "redx": {
+        "enabled": false,
+        "apiKey": ""
+      },
+      "ecourier": {
+        "enabled": false,
+        "apiKey": "",
+        "secret": ""
+      },
+      "defaultDeliveryCharge": {
+        "insideDhaka": 60,
+        "subDhaka": 100,
+        "outsideDhaka": 130
+      },
+      "fastDelivery": {
+        "enabled": true,
+        "chargeExtra": 50,
+        "areas": [
+          "ঢাকা শহর"
+        ]
+      }
+    },
+    "seo": {
+      "siteName": "পাইকারি69bd.com",
+      "defaultTitle": "পাইকারি69bd.com — বাংলাদেশের সেরা পাইকারি মার্কেটপ্লেস",
+      "defaultDescription": "অরিজিনাল প্রোডাক্ট, পাইকারি দাম, সারাদেশে দ্রুত ডেলিভারি — রিসেলার ও দোকানদারদের প্রথম পছন্দ।",
+      "defaultKeywords": "পাইকারি, wholesale Bangladesh, পাইকারি দাম, paikari, বাংলাদেশ, রিসেলার",
+      "ogImage": "https://paikari69bd.com/og-cover.jpg",
+      "twitterHandle": "@paikari69bd",
+      "homepage": {
+        "title": "পাইকারি দামে সারা বাংলাদেশে — পাইকারি69bd.com",
+        "description": "৫০,০০০+ রিসেলারের ভরসার বাজার। অরিজিনাল প্রোডাক্ট, MOQ থেকে শুরু পাইকারি দাম, সারাদেশে দ্রুত ডেলিভারি।",
+        "keywords": "পাইকারি, wholesale, paikari69bd, রিসেলার, বাংলাদেশ পাইকারি"
+      },
+      "productPattern": {
+        "title": "{title} — পাইকারি দাম ৳{price} | পাইকারি69bd.com",
+        "description": "{title}, পাইকারি দাম ৳{price}, MOQ {moq} {unit}, সারাদেশে দ্রুত ডেলিভারি। অর্ডার করুন paikari69bd.com"
+      },
+      "categoryPattern": {
+        "title": "{category} — পাইকারি কালেকশন | পাইকারি69bd.com",
+        "description": "{category} ক্যাটাগরির সেরা পাইকারি প্রোডাক্ট। বেস্ট দাম, ফ্রেশ স্টক, সারাদেশে ডেলিভারি।"
+      },
+      "sitemapEnabled": true,
+      "robotsAllow": true,
+      "canonicalDomain": "https://paikari69bd.com"
+    },
+    "storefront": {
+      "whatsappNumber": "8801872888954",
+      "whatsappDisplay": "01872-888954",
+      "merchantPhone": "01700-000069",
+      "facebookPixelId": "",
+      "fbPageUrl": "https://facebook.com/paikari69bd",
+      "facebookAppId": "",
+      "metaSiteVerify": "",
+      "googleAnalyticsId": "",
+      "enabledTracking": {
+        "pixel": true,
+        "pageView": true,
+        "addToCart": true,
+        "initiateCheckout": true,
+        "purchase": true,
+        "whatsappClick": true
+      }
+    },
+    "roles": [
+      {
+        "key": "super_admin",
+        "nameBn": "সুপার অ্যাডমিন",
+        "permissions": [
+          "সব কিছু"
+        ],
+        "members": [
+          {
+            "name": "Owner",
+            "phone": "01700-000069"
+          }
+        ]
+      },
+      {
+        "key": "order_manager",
+        "nameBn": "অর্ডার ম্যানেজার",
+        "permissions": [
+          "অর্ডার দেখা",
+          "স্ট্যাটাস পরিবর্তন",
+          "নোট যোগ",
+          "পেমেন্ট ভেরিফাই"
+        ],
+        "members": []
+      },
+      {
+        "key": "inventory_manager",
+        "nameBn": "ইনভেন্টরি ম্যানেজার",
+        "permissions": [
+          "পণ্য যোগ",
+          "স্টক আপডেট",
+          "স্টক লগ",
+          "ক্ষতিগ্রস্ত নোট"
+        ],
+        "members": []
+      },
+      {
+        "key": "support",
+        "nameBn": "সাপোর্ট স্টাফ",
+        "permissions": [
+          "রিভিউ মডারেট",
+          "অর্ডার দেখা",
+          "WhatsApp চ্যাট"
+        ],
+        "members": []
+      }
+    ]
+  },
+  "abandonedCarts": [],
+  "ledger": [],
+  "categories": [
+    {
+      "slug": "fashion",
+      "nameBn": "ফ্যাশন ও পোশাক",
+      "nameEn": "Fashion & Apparel",
+      "icon": "Shirt",
+      "productCount": 15
+    },
+    {
+      "slug": "electronics",
+      "nameBn": "ইলেকট্রনিক্স",
+      "nameEn": "Electronics",
+      "icon": "Smartphone",
+      "productCount": 2
+    },
+    {
+      "slug": "grocery",
+      "nameBn": "মুদি ও খাবার",
+      "nameEn": "Grocery & Food",
+      "icon": "ShoppingBasket",
+      "productCount": 2
+    },
+    {
+      "slug": "home",
+      "nameBn": "হোম ও কিচেন",
+      "nameEn": "Home & Kitchen",
+      "icon": "Home",
+      "productCount": 2
+    },
+    {
+      "slug": "beauty",
+      "nameBn": "বিউটি ও কেয়ার",
+      "nameEn": "Beauty & Care",
+      "icon": "Sparkles",
+      "productCount": 2
+    },
+    {
+      "slug": "kids",
+      "nameBn": "বাচ্চাদের পণ্য",
+      "nameEn": "Kids & Toys",
+      "icon": "Baby",
+      "productCount": 2
+    },
+    {
+      "slug": "stationery",
+      "nameBn": "স্টেশনারি",
+      "nameEn": "Stationery",
+      "icon": "Pencil",
+      "productCount": 2
+    },
+    {
+      "slug": "accessories",
+      "nameBn": "এক্সেসরিজ",
+      "nameEn": "Accessories",
+      "icon": "Watch",
+      "productCount": 2
+    }
+  ]
+}
