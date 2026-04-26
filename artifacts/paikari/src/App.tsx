@@ -21,6 +21,11 @@ import Account from "@/pages/Account";
 import AdminDashboard from "@/pages/admin/AdminDashboard";
 import AdminProducts from "@/pages/admin/AdminProducts";
 import AdminOrders from "@/pages/admin/AdminOrders";
+import AdminInventory from "@/pages/admin/AdminInventory";
+import AdminReviews from "@/pages/admin/AdminReviews";
+import AdminPayments from "@/pages/admin/AdminPayments";
+import AdminSMS from "@/pages/admin/AdminSMS";
+import AdminRoles from "@/pages/admin/AdminRoles";
 import NotFound from "@/pages/not-found";
 
 const queryClient = new QueryClient({
@@ -47,6 +52,11 @@ function AppRouter() {
       <Route path="/admin" component={AdminDashboard} />
       <Route path="/admin/products" component={AdminProducts} />
       <Route path="/admin/orders" component={AdminOrders} />
+      <Route path="/admin/inventory" component={AdminInventory} />
+      <Route path="/admin/reviews" component={AdminReviews} />
+      <Route path="/admin/payments" component={AdminPayments} />
+      <Route path="/admin/sms" component={AdminSMS} />
+      <Route path="/admin/roles" component={AdminRoles} />
       <Route>
         <PublicLayout>
           <Switch>

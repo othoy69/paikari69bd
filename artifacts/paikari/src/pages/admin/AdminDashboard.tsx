@@ -1,92 +1,102 @@
-import { useGetAdminStats } from "@workspace/api-client-react";
+import { useQuery } from "@tanstack/react-query";
 import { AdminLayout } from "./AdminLayout";
-import { Skeleton } from "@/components/ui/skeleton";
-import { Badge } from "@/components/ui/badge";
+import { Card, PageHeader, StatCard, StatusBadge, EmptyState } from "./_ui";
+import { adminApi } from "@/lib/adminApi";
 import { bdt } from "@/lib/format";
-import { ShoppingBag, Package, DollarSign, AlertCircle, Clock, TrendingUp } from "lucide-react";
-
-const STATUS_LABEL: Record<string, string> = {
-  pending: "প্রক্রিয়াধীন",
-  confirmed: "নিশ্চিত",
-  packed: "প্যাক",
-  shipped: "শিপড",
-  delivered: "ডেলিভার্ড",
-  cancelled: "বাতিল",
-};
+import {
+  ShoppingBag,
+  CalendarDays,
+  Clock,
+  DollarSign,
+  AlertTriangle,
+  Package,
+  Users,
+  Star,
+  ChevronRight,
+} from "lucide-react";
+import { Link } from "wouter";
+import { Skeleton } from "@/components/ui/skeleton";
 
 export default function AdminDashboard() {
-  const { data, isLoading } = useGetAdminStats();
+  const { data, isLoading } = useQuery({
+    queryKey: ["admin-dashboard"],
+    queryFn: adminApi.dashboard,
+    refetchInterval: 30000,
+  });
 
   return (
     <AdminLayout>
-      <h1 className="text-2xl font-bold mb-4">ড্যাশবোর্ড</h1>
+      <PageHeader
+        title="ড্যাশবোর্ড"
+        desc="আপনার পাইকারি ব্যবসার লাইভ ওভারভিউ"
+      />
+
       {isLoading || !data ? (
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
-          {Array.from({ length: 5 }).map((_, i) => <Skeleton key={i} className="h-24 rounded-2xl" />)}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+          {Array.from({ length: 8 }).map((_, i) => <Skeleton key={i} className="h-28 rounded-2xl" />)}
         </div>
       ) : (
         <>
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-3 mb-6">
-            <StatCard icon={ShoppingBag} label="মোট অর্ডার" value={data.totalOrders.toString()} accent="text-primary bg-primary/10" />
-            <StatCard icon={Clock} label="প্রক্রিয়াধীন" value={data.pendingOrders.toString()} accent="text-amber-600 bg-amber-100" />
-            <StatCard icon={DollarSign} label="মোট রেভিনিউ" value={bdt(data.totalRevenue)} accent="text-emerald-600 bg-emerald-100" />
-            <StatCard icon={Package} label="মোট পণ্য" value={data.totalProducts.toString()} accent="text-blue-600 bg-blue-100" />
-            <StatCard icon={AlertCircle} label="স্টক কম" value={data.lowStockCount.toString()} accent="text-destructive bg-destructive/10" />
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-5">
+            <StatCard icon={ShoppingBag} label="মোট অর্ডার" value={data.totalOrders.toString()} tone="orange" />
+            <StatCard icon={CalendarDays} label="আজকের অর্ডার" value={data.todayOrders.toString()} hint={bdt(data.todayRevenue)} tone="blue" />
+            <StatCard icon={Clock} label="পেন্ডিং অর্ডার" value={data.pendingOrders.toString()} tone="amber" />
+            <StatCard icon={DollarSign} label="মোট রেভিনিউ" value={bdt(data.totalRevenue)} tone="emerald" />
+            <StatCard icon={AlertTriangle} label="পেমেন্ট পেন্ডিং" value={data.pendingPaymentCount.toString()} hint={bdt(data.pendingPaymentAmount)} tone="red" />
+            <StatCard icon={Package} label="স্টক কম" value={data.lowStockCount.toString()} hint={`${data.totalProducts} মোট পণ্য`} tone="purple" />
+            <StatCard icon={Users} label="মোট কাস্টমার" value={data.totalCustomers.toString()} tone="slate" />
+            <StatCard icon={Star} label="মোট রিভিউ" value={data.totalReviews.toString()} hint={`${data.pendingReviews} পেন্ডিং`} tone="amber" />
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-4">
-            <section className="bg-card border rounded-2xl p-4">
-              <h2 className="font-bold mb-3">সাম্প্রতিক অর্ডার</h2>
+          <div className="grid lg:grid-cols-3 gap-4">
+            <Card
+              title="সাম্প্রতিক অর্ডার"
+              right={<Link href="/admin/orders" className="text-xs font-bold text-orange-600 flex items-center gap-0.5 hover:underline">সব দেখুন <ChevronRight className="w-3 h-3" /></Link>}
+              className="lg:col-span-2"
+            >
               {data.recentOrders.length === 0 ? (
-                <p className="text-sm text-muted-foreground text-center py-6">এখনো কোনো অর্ডার নেই</p>
+                <EmptyState message="এখনো কোনো অর্ডার নেই" />
               ) : (
-                <div className="space-y-2">
+                <div className="divide-y divide-slate-100">
                   {data.recentOrders.map((o) => (
-                    <div key={o.orderNo} className="flex items-center justify-between text-sm border-b last:border-0 pb-2">
-                      <div>
-                        <div className="font-mono font-semibold">{o.orderNo}</div>
-                        <div className="text-xs text-muted-foreground">{o.address?.name} • {o.items.length} টি</div>
+                    <div key={o.orderNo} className="flex items-center justify-between gap-2 py-2.5 first:pt-0 last:pb-0">
+                      <div className="min-w-0">
+                        <div className="font-mono text-xs font-bold text-slate-900">{o.orderNo}</div>
+                        <div className="text-xs text-slate-600 truncate">{o.address?.name} • {o.items.length} টি পণ্য</div>
                       </div>
-                      <div className="text-right">
-                        <div className="font-bold text-primary">{bdt(o.total)}</div>
-                        <Badge variant="outline" className="text-xs">{STATUS_LABEL[o.status] ?? o.status}</Badge>
+                      <div className="text-right flex flex-col items-end gap-1">
+                        <div className="font-extrabold text-slate-900 tabular-nums text-sm">{bdt(o.total)}</div>
+                        <StatusBadge status={o.status} />
                       </div>
                     </div>
                   ))}
                 </div>
               )}
-            </section>
+            </Card>
 
-            <section className="bg-card border rounded-2xl p-4">
-              <h2 className="font-bold mb-3 flex items-center gap-2"><TrendingUp className="w-4 h-4" /> টপ পণ্য</h2>
-              <div className="space-y-2">
-                {data.topProducts.map((p) => (
-                  <div key={p.id} className="flex items-center gap-3 text-sm border-b last:border-0 pb-2">
-                    <img src={p.image} alt="" className="w-10 h-10 rounded object-cover" />
-                    <div className="flex-1 min-w-0">
-                      <div className="line-clamp-1 font-medium">{p.titleBn}</div>
-                      <div className="text-xs text-muted-foreground">{p.sold} বিক্রি • স্টক: {p.stock}</div>
+            <Card
+              title="স্টক কম পণ্য"
+              right={<Link href="/admin/inventory" className="text-xs font-bold text-orange-600 flex items-center gap-0.5 hover:underline">ম্যানেজ <ChevronRight className="w-3 h-3" /></Link>}
+            >
+              {data.lowStockProducts.length === 0 ? (
+                <EmptyState message="সব পণ্যের স্টক ভালো" />
+              ) : (
+                <div className="space-y-2">
+                  {data.lowStockProducts.map((p) => (
+                    <div key={p.id} className="flex items-center gap-2.5">
+                      <img src={p.image} alt="" className="w-10 h-10 rounded-lg object-cover flex-shrink-0" />
+                      <div className="flex-1 min-w-0">
+                        <div className="text-xs font-bold text-slate-900 line-clamp-1">{p.titleBn}</div>
+                        <div className="text-[11px] text-red-600 font-semibold">মাত্র {p.stock} পিস বাকি</div>
+                      </div>
                     </div>
-                    <div className="font-bold text-primary">{bdt(p.wholesalePrice)}</div>
-                  </div>
-                ))}
-              </div>
-            </section>
+                  ))}
+                </div>
+              )}
+            </Card>
           </div>
         </>
       )}
     </AdminLayout>
-  );
-}
-
-function StatCard({ icon: Icon, label, value, accent }: { icon: React.ElementType; label: string; value: string; accent: string }) {
-  return (
-    <div className="bg-card border rounded-2xl p-4">
-      <div className={`w-9 h-9 rounded-lg flex items-center justify-center ${accent} mb-2`}>
-        <Icon className="w-4 h-4" />
-      </div>
-      <div className="text-xs text-muted-foreground font-medium">{label}</div>
-      <div className="text-xl font-bold mt-0.5">{value}</div>
-    </div>
   );
 }

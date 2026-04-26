@@ -1,4 +1,12 @@
-import { getDb, saveDb, setDb, type Product, type Category } from "./store";
+import {
+  getDb,
+  saveDb,
+  setDb,
+  DEFAULT_SETTINGS,
+  type Product,
+  type Category,
+  type Review,
+} from "./store";
 
 function slugify(s: string): string {
   return s
@@ -742,6 +750,45 @@ export function ensureSeed(): void {
       if (c) c.productCount += 1;
     }
     (db as unknown as { categories?: Category[] }).categories = Array.from(map.values());
+    if (!db.reviews || db.reviews.length === 0) {
+      db.reviews = [
+        {
+          id: uid(),
+          customerName: "মোঃ রফিকুল ইসলাম",
+          customerPhone: "01711-234567",
+          productTitleBn: "ওয়ার্ল্ড কাপ ২০২৬ অফিসিয়াল জার্সি",
+          rating: 5,
+          text: "অসাধারণ কোয়ালিটি! ১০ পিস নিয়েছিলাম, সবগুলোর কাপড় খুব ভালো।",
+          status: "approved",
+          featured: true,
+          createdAt: new Date(Date.now() - 86400000 * 2).toISOString(),
+        },
+        {
+          id: uid(),
+          customerName: "শাহানা বেগম",
+          customerPhone: "01812-345678",
+          productTitleBn: "টাঙ্গাইল হাফ সিল্ক শাড়ি",
+          rating: 5,
+          text: "সরাসরি তাঁতি থেকে যেমন বললো, আসলেও সেরকমই। আমার সব কাস্টমার পছন্দ করেছে।",
+          status: "approved",
+          featured: true,
+          createdAt: new Date(Date.now() - 86400000 * 5).toISOString(),
+        },
+        {
+          id: uid(),
+          customerName: "ফাহিম আহমেদ",
+          rating: 4,
+          text: "ডেলিভারি ২ দিনে পেয়েছি ঢাকার বাইরে। প্যাকিং খুব ভালো ছিল।",
+          status: "pending",
+          featured: false,
+          createdAt: new Date(Date.now() - 86400000).toISOString(),
+        },
+      ];
+    }
+    if (!db.settings) db.settings = JSON.parse(JSON.stringify(DEFAULT_SETTINGS));
+    if (!db.stockLogs) db.stockLogs = [];
+    if (!db.smsLogs) db.smsLogs = [];
+    if (!db.txnLogs) db.txnLogs = [];
     saveDb();
     return;
   }
@@ -761,7 +808,71 @@ export function ensureSeed(): void {
       image: IMG(s.image),
     };
   });
-  setDb({ products, orders: [], users: [], otps: [] });
+  const SAMPLE_REVIEWS: Review[] = [
+    {
+      id: uid(),
+      customerName: "মোঃ রফিকুল ইসলাম",
+      customerPhone: "01711-234567",
+      productTitleBn: "ওয়ার্ল্ড কাপ ২০২৬ অফিসিয়াল জার্সি",
+      rating: 5,
+      text: "অসাধারণ কোয়ালিটি! ১০ পিস নিয়েছিলাম, সবগুলোর কাপড় খুব ভালো। দাম অনেক কম পেয়েছি অন্য জায়গার তুলনায়।",
+      status: "approved",
+      featured: true,
+      createdAt: new Date(Date.now() - 86400000 * 2).toISOString(),
+    },
+    {
+      id: uid(),
+      customerName: "শাহানা বেগম",
+      customerPhone: "01812-345678",
+      productTitleBn: "টাঙ্গাইল হাফ সিল্ক শাড়ি",
+      rating: 5,
+      text: "সরাসরি তাঁতি থেকে যেমন বললো, আসলেও সেরকমই। কালার একদম আসল। আমার দোকানের সব কাস্টমার পছন্দ করেছে।",
+      status: "approved",
+      featured: true,
+      createdAt: new Date(Date.now() - 86400000 * 5).toISOString(),
+    },
+    {
+      id: uid(),
+      customerName: "ফাহিম আহমেদ",
+      customerPhone: "01900-456789",
+      productTitleBn: "প্রিমিয়াম থ্রি-পিস",
+      rating: 4,
+      text: "ডেলিভারি ২ দিনে পেয়েছি ঢাকার বাইরে। প্যাকিং খুব ভালো ছিল। আবার অর্ডার করব।",
+      status: "approved",
+      featured: true,
+      createdAt: new Date(Date.now() - 86400000 * 7).toISOString(),
+    },
+    {
+      id: uid(),
+      customerName: "নাসরিন আক্তার",
+      rating: 5,
+      text: "৫ পিস টিয়ারে দাম খুবই সাশ্রয়ী। রিসেলার হিসেবে আমার লাভ হচ্ছে।",
+      status: "pending",
+      featured: false,
+      createdAt: new Date(Date.now() - 86400000).toISOString(),
+    },
+    {
+      id: uid(),
+      customerName: "Anonymous",
+      rating: 1,
+      text: "spam content xxxxxx",
+      status: "pending",
+      featured: false,
+      createdAt: new Date(Date.now() - 3600000).toISOString(),
+    },
+  ];
+
+  setDb({
+    products,
+    orders: [],
+    users: [],
+    otps: [],
+    reviews: SAMPLE_REVIEWS,
+    stockLogs: [],
+    smsLogs: [],
+    txnLogs: [],
+    settings: JSON.parse(JSON.stringify(DEFAULT_SETTINGS)),
+  });
 }
 
 export function getCategories(): Category[] {
