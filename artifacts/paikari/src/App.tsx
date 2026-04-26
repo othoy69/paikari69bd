@@ -2,8 +2,13 @@ import { Switch, Route, Router as WouterRouter } from "wouter";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { useEffect } from "react";
+import { useLocation } from "wouter";
 import { CartProvider } from "@/contexts/CartContext";
 import { AuthProvider } from "@/contexts/AuthContext";
+import { SettingsProvider } from "@/contexts/SettingsContext";
+import { WishlistProvider } from "@/contexts/WishlistContext";
+import { pixel } from "@/lib/pixel";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppFloating } from "@/components/common/WhatsAppButton";
@@ -18,6 +23,7 @@ import Checkout from "@/pages/Checkout";
 import OrderSuccess from "@/pages/OrderSuccess";
 import Auth from "@/pages/Auth";
 import Account from "@/pages/Account";
+import Wishlist from "@/pages/Wishlist";
 import AdminDashboard from "@/pages/admin/AdminDashboard";
 import AdminProducts from "@/pages/admin/AdminProducts";
 import AdminOrders from "@/pages/admin/AdminOrders";
@@ -26,6 +32,8 @@ import AdminReviews from "@/pages/admin/AdminReviews";
 import AdminPayments from "@/pages/admin/AdminPayments";
 import AdminSMS from "@/pages/admin/AdminSMS";
 import AdminRoles from "@/pages/admin/AdminRoles";
+import AdminUsers from "@/pages/admin/AdminUsers";
+import AdminStorefront from "@/pages/admin/AdminStorefront";
 import NotFound from "@/pages/not-found";
 
 const queryClient = new QueryClient({
@@ -46,6 +54,14 @@ function PublicLayout({ children }: { children: React.ReactNode }) {
   );
 }
 
+function PageViewTracker() {
+  const [location] = useLocation();
+  useEffect(() => {
+    pixel.pageView();
+  }, [location]);
+  return null;
+}
+
 function AppRouter() {
   return (
     <Switch>
@@ -54,11 +70,14 @@ function AppRouter() {
       <Route path="/admin/orders" component={AdminOrders} />
       <Route path="/admin/inventory" component={AdminInventory} />
       <Route path="/admin/reviews" component={AdminReviews} />
+      <Route path="/admin/users" component={AdminUsers} />
       <Route path="/admin/payments" component={AdminPayments} />
       <Route path="/admin/sms" component={AdminSMS} />
+      <Route path="/admin/storefront" component={AdminStorefront} />
       <Route path="/admin/roles" component={AdminRoles} />
       <Route>
         <PublicLayout>
+          <PageViewTracker />
           <Switch>
             <Route path="/" component={Home} />
             <Route path="/categories" component={Categories} />
@@ -70,6 +89,8 @@ function AppRouter() {
             <Route path="/order-success/:orderNo" component={OrderSuccess} />
             <Route path="/auth" component={Auth} />
             <Route path="/account" component={Account} />
+            <Route path="/account/:tab" component={Account} />
+            <Route path="/wishlist" component={Wishlist} />
             <Route component={NotFound} />
           </Switch>
         </PublicLayout>
@@ -82,14 +103,18 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        <AuthProvider>
-          <CartProvider>
-            <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
-              <AppRouter />
-            </WouterRouter>
-            <Toaster />
-          </CartProvider>
-        </AuthProvider>
+        <SettingsProvider>
+          <AuthProvider>
+            <WishlistProvider>
+              <CartProvider>
+                <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
+                  <AppRouter />
+                </WouterRouter>
+                <Toaster />
+              </CartProvider>
+            </WishlistProvider>
+          </AuthProvider>
+        </SettingsProvider>
       </TooltipProvider>
     </QueryClientProvider>
   );

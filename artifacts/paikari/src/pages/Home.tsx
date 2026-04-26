@@ -7,6 +7,7 @@ import { FacebookCTA } from "../components/common/FacebookCTA";
 import { ThreeFeatureBoxes } from "../components/common/ThreeFeatureBoxes";
 import { WorldCupBanner } from "../components/common/WorldCupBanner";
 import { WhatsAppCtaSection } from "../components/common/WhatsAppCtaSection";
+import { HomeReviews } from "../components/common/HomeReviews";
 import { Skeleton } from "../components/ui/skeleton";
 import { Link } from "wouter";
 import {
@@ -268,6 +269,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Customer reviews */}
+      <HomeReviews />
 
       {/* Direct WhatsApp order CTA */}
       <WhatsAppCtaSection />

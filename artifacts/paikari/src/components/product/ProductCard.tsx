@@ -4,6 +4,8 @@ import { Plus, Flame, Zap, TrendingUp, Sparkles } from "lucide-react";
 import { Button } from "../ui/button";
 import { bdt } from "../../lib/format";
 import { useCart } from "../../contexts/CartContext";
+import { WishlistButton } from "../common/WishlistButton";
+import { pixel } from "../../lib/pixel";
 import type { Product } from "@workspace/api-client-react";
 
 interface ProductCardProps {
@@ -24,6 +26,11 @@ export function ProductCard({ product }: ProductCardProps) {
     e.preventDefault();
     e.stopPropagation();
     addItem(product.id, product.moq, product);
+    pixel.addToCart({
+      content_ids: [product.id],
+      content_name: product.titleBn,
+      value: product.wholesalePrice * product.moq,
+    });
   };
 
   const savings = product.oldPrice - product.wholesalePrice;
@@ -47,11 +54,16 @@ export function ProductCard({ product }: ProductCardProps) {
 
         {/* Top-right primary badge */}
         {primaryBadge && PrimaryIcon && (
-          <div className="absolute top-2 right-2 z-10 bg-white/95 backdrop-blur-sm rounded-full px-2 py-0.5 flex items-center gap-1 shadow-sm border border-orange-100">
+          <div className="absolute top-2 right-12 z-10 bg-white/95 backdrop-blur-sm rounded-full px-2 py-0.5 flex items-center gap-1 shadow-sm border border-orange-100">
             <PrimaryIcon className="w-3 h-3 text-orange-600" />
             <span className="text-[10px] font-bold text-orange-700">{primaryBadge}</span>
           </div>
         )}
+
+        {/* Wishlist heart */}
+        <div className="absolute top-2 right-2 z-10">
+          <WishlistButton productId={product.id} size="sm" />
+        </div>
 
         {/* Image */}
         <div className="relative aspect-square bg-gradient-to-br from-slate-50 to-slate-100 overflow-hidden">

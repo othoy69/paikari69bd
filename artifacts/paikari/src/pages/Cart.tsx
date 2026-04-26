@@ -7,11 +7,14 @@ import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { QuantityStepper } from "@/components/product/QuantityStepper";
 import { ShoppingBag, Trash2, ArrowRight } from "lucide-react";
+import { WhatsAppOrderCta } from "@/components/common/WhatsAppOrderCta";
+import { useStorefrontSettings } from "@/contexts/SettingsContext";
 
 export default function Cart() {
   const [, setLocation] = useLocation();
   const { items, updateQty, remove, clear } = useCart();
   const { data: allProducts, isLoading } = useListProducts();
+  const { storefront } = useStorefrontSettings();
 
   const lines = useMemo(() => {
     if (!allProducts) return [];
@@ -128,6 +131,29 @@ export default function Cart() {
             <Button size="lg" className="w-full" onClick={() => setLocation("/checkout")}>
               চেকআউট <ArrowRight className="w-4 h-4 ml-2" />
             </Button>
+
+            <div className="relative my-2">
+              <div className="absolute inset-0 flex items-center"><div className="w-full border-t" /></div>
+              <div className="relative flex justify-center"><span className="bg-card px-2 text-[10px] uppercase tracking-wider text-muted-foreground">অথবা</span></div>
+            </div>
+
+            <WhatsAppOrderCta
+              items={lines.map((l) => ({
+                titleBn: l.product.titleBn,
+                qty: l.qty,
+                unit: l.product.unit,
+                unitPrice: l.unitPrice,
+                lineTotal: l.lineTotal,
+              }))}
+              subtotal={subtotal}
+              total={subtotal}
+              source="cart"
+              className="w-full"
+              size="lg"
+            />
+            <p className="text-[11px] text-center text-muted-foreground">
+              WhatsApp এ অর্ডার করুন: {storefront.whatsappDisplay}
+            </p>
           </div>
         </div>
       </div>

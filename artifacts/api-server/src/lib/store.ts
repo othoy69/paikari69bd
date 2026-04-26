@@ -191,10 +191,55 @@ export type AdminRole = {
   members: { name: string; phone?: string }[];
 };
 
+export type StorefrontSettings = {
+  whatsappNumber: string;
+  whatsappDisplay: string;
+  merchantPhone: string;
+  facebookPixelId: string;
+  fbPageUrl: string;
+  facebookAppId?: string;
+  metaSiteVerify?: string;
+  googleAnalyticsId?: string;
+  enabledTracking: {
+    pixel: boolean;
+    pageView: boolean;
+    addToCart: boolean;
+    initiateCheckout: boolean;
+    purchase: boolean;
+    whatsappClick: boolean;
+  };
+};
+
 export type Settings = {
   payment: PaymentSettings;
   sms: SmsSettings;
   roles: AdminRole[];
+  storefront?: StorefrontSettings;
+};
+
+export type SavedAddress = {
+  id: string;
+  label: string;
+  name: string;
+  phone: string;
+  division: string;
+  district: string;
+  area: string;
+  addressLine: string;
+  landmark?: string;
+  isDefault?: boolean;
+};
+
+export type WishlistEntry = { productId: string; addedAt: string };
+
+export type Notification = {
+  id: string;
+  title: string;
+  body: string;
+  type: "order" | "payment" | "promo" | "system";
+  read: boolean;
+  href?: string;
+  createdAt: string;
 };
 
 export type AuthUser = {
@@ -206,6 +251,9 @@ export type AuthUser = {
   address?: string;
   district?: string;
   createdAt: string;
+  addresses?: SavedAddress[];
+  wishlist?: WishlistEntry[];
+  notifications?: Notification[];
 };
 
 export type Otp = { identifier: string; code: string; expiresAt: number };
@@ -263,6 +311,24 @@ export const DEFAULT_SETTINGS: Settings = {
       shipped: "আপনার অর্ডার {orderNo} পাঠিয়ে দেওয়া হয়েছে। শীঘ্রই পেয়ে যাবেন।",
       delivered: "অর্ডার {orderNo} সফলভাবে ডেলিভার হয়েছে। আবার অর্ডার করুন paikari69bd.com",
       cancelled: "দুঃখিত, আপনার অর্ডার {orderNo} বাতিল হয়েছে। প্রশ্ন থাকলে: 01872-888954",
+    },
+  },
+  storefront: {
+    whatsappNumber: "8801872888954",
+    whatsappDisplay: "01872-888954",
+    merchantPhone: "01700-000069",
+    facebookPixelId: "",
+    fbPageUrl: "https://facebook.com/paikari69bd",
+    facebookAppId: "",
+    metaSiteVerify: "",
+    googleAnalyticsId: "",
+    enabledTracking: {
+      pixel: true,
+      pageView: true,
+      addToCart: true,
+      initiateCheckout: true,
+      purchase: true,
+      whatsappClick: true,
     },
   },
   roles: [

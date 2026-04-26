@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useLocation, Link } from "wouter";
 import {
   useListProducts,
@@ -6,6 +6,9 @@ import {
 } from "@workspace/api-client-react";
 import { useCart } from "@/contexts/CartContext";
 import { useAuth } from "@/contexts/AuthContext";
+import { useStorefrontSettings } from "@/contexts/SettingsContext";
+import { publicApi } from "@/lib/publicApi";
+import { pixel } from "@/lib/pixel";
 import { bdt, calcUnitPrice } from "@/lib/format";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -19,7 +22,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { CheckCircle2, Lock } from "lucide-react";
+import { CheckCircle2, Lock, MessageCircle, Loader2 } from "lucide-react";
+import { WhatsAppOrderCta } from "@/components/common/WhatsAppOrderCta";
 
 const DIVISIONS = [
   "Dhaka", "Chittagong", "Sylhet", "Khulna", "Rajshahi",
@@ -40,8 +44,10 @@ export default function Checkout() {
   const [, setLocation] = useLocation();
   const { items, clear } = useCart();
   const { identifier } = useAuth();
+  const { storefront } = useStorefrontSettings();
   const { data: allProducts } = useListProducts();
   const createOrder = useCreateOrder();
+  const [gatewayLoading, setGatewayLoading] = useState(false);
 
   const [form, setForm] = useState({
     name: "",
@@ -78,6 +84,18 @@ export default function Checkout() {
   const shipping = form.division === "Dhaka" ? 60 : 130;
   const total = subtotal + shipping;
 
+  // Fire InitiateCheckout once when entering checkout with items
+  useEffect(() => {
+    if (lines.length > 0) {
+      pixel.initiateCheckout({
+        value: total,
+        num_items: lines.reduce((s, l) => s + l.qty, 0),
+        content_ids: lines.map((l) => l.productId),
+      });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [lines.length]);
+
   if (lines.length === 0) {
     return (
       <div className="container mx-auto px-4 py-16 text-center pb-24">
@@ -90,6 +108,37 @@ export default function Checkout() {
   const updateField = (k: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement>) =>
     setForm((f) => ({ ...f, [k]: e.target.value }));
 
+  const runGateway = async (orderNo: string): Promise<{ ok: boolean; ref?: string; status?: string }> => {
+    if (payment === "bkash") {
+      setGatewayLoading(true);
+      try {
+        const c = await publicApi.bkashCreate({ amount: total, orderNo, payerPhone: form.phone });
+        // sandbox: auto-execute
+        const ex = await publicApi.bkashExecute({ paymentID: c.paymentID });
+        return { ok: ex.transactionStatus === "Completed", ref: ex.trxID, status: ex.transactionStatus };
+      } catch (e) {
+        setError(e instanceof Error ? e.message : "বিকাশ পেমেন্ট ব্যর্থ");
+        return { ok: false };
+      } finally {
+        setGatewayLoading(false);
+      }
+    }
+    if (payment === "nagad") {
+      setGatewayLoading(true);
+      try {
+        const init = await publicApi.nagadInitialize({ amount: total, orderNo, payerPhone: form.phone });
+        const done = await publicApi.nagadComplete({ paymentReferenceId: init.sensitiveData.paymentReferenceId });
+        return { ok: done.status === "Success", ref: done.issuerPaymentRefNo, status: done.status };
+      } catch (e) {
+        setError(e instanceof Error ? e.message : "নগদ পেমেন্ট ব্যর্থ");
+        return { ok: false };
+      } finally {
+        setGatewayLoading(false);
+      }
+    }
+    return { ok: true };
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
@@ -97,11 +146,23 @@ export default function Checkout() {
       setError("অনুগ্রহ করে সকল প্রয়োজনীয় ঘর পূরণ করুন");
       return;
     }
-    if (payment !== "cod" && !txnRef) {
+    // For rocket/bank, manual TrxID still required
+    if ((payment === "rocket" || payment === "bank") && !txnRef) {
       setError("পেমেন্টের লেনদেন নাম্বার (TrxID) দিন");
       return;
     }
     try {
+      // Generate a temporary order reference for gateway flow
+      const tempOrderNo = `TMP-${Date.now()}`;
+      let finalTxnRef = txnRef;
+      if (payment === "bkash" || payment === "nagad") {
+        const g = await runGateway(tempOrderNo);
+        if (!g.ok) {
+          if (!error) setError("পেমেন্ট সম্পন্ন হয়নি, আবার চেষ্টা করুন");
+          return;
+        }
+        finalTxnRef = g.ref ?? "";
+      }
       const res = await createOrder.mutateAsync({
         data: {
           items: items.map((it) => ({ productId: it.productId, qty: it.qty })),
@@ -116,10 +177,16 @@ export default function Checkout() {
             landmark: form.landmark || undefined,
           },
           paymentMethod: payment,
-          txnRef: txnRef || undefined,
+          txnRef: finalTxnRef || undefined,
           note: note || undefined,
           userIdentifier: identifier ?? form.phone,
         },
+      });
+      pixel.purchase({
+        value: total,
+        num_items: lines.reduce((s, l) => s + l.qty, 0),
+        content_ids: lines.map((l) => l.productId),
+        orderNo: res.orderNo,
       });
       clear();
       setLocation(`/order-success/${res.orderNo}`);
@@ -193,14 +260,28 @@ export default function Checkout() {
               ))}
             </RadioGroup>
 
-            {payment !== "cod" && (
+            {(payment === "bkash" || payment === "nagad") && (
+              <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-3 text-sm space-y-2">
+                <div className="font-semibold text-emerald-900">
+                  {payment === "bkash" ? "বিকাশ" : "নগদ"} স্যান্ডবক্স পেমেন্ট
+                </div>
+                <div className="text-emerald-800">
+                  "অর্ডার নিশ্চিত করুন" বাটনে চাপলে {payment === "bkash" ? "বিকাশ" : "নগদ"} পেমেন্ট প্রক্রিয়া স্বয়ংক্রিয়ভাবে সম্পন্ন হবে।
+                  পরিমাণ: <b>{bdt(total)}</b>
+                </div>
+                <div className="text-xs text-emerald-700">
+                  উৎপাদনে যাওয়ার পর এটি প্রকৃত {payment === "bkash" ? "bKash" : "Nagad"} pop-up এ পরিবর্তিত হবে।
+                </div>
+              </div>
+            )}
+            {(payment === "rocket" || payment === "bank") && (
               <div className="bg-amber-50 border border-amber-200 rounded-xl p-3 text-sm space-y-2">
                 <div className="font-semibold text-amber-900">পেমেন্ট নির্দেশনা</div>
                 <div className="text-amber-800">
                   নিচের নাম্বারে <b>{bdt(total)}</b> Send Money করুন:
                 </div>
                 <div className="bg-white rounded-md p-2 font-mono text-base font-bold text-center">
-                  01700-000069 ({PAYMENTS.find((x) => x.id === payment)?.labelBn})
+                  {storefront.merchantPhone} ({PAYMENTS.find((x) => x.id === payment)?.labelBn})
                 </div>
                 <div>
                   <Label>লেনদেন নাম্বার (TrxID) *</Label>
@@ -245,10 +326,43 @@ export default function Checkout() {
               </div>
             </div>
             {error && <div className="text-sm text-destructive bg-destructive/10 p-2 rounded">{error}</div>}
-            <Button type="submit" size="lg" className="w-full" disabled={createOrder.isPending}>
-              <Lock className="w-4 h-4 mr-2" />
-              {createOrder.isPending ? "অর্ডার করছি..." : `অর্ডার নিশ্চিত করুন • ${bdt(total)}`}
+            <Button type="submit" size="lg" className="w-full" disabled={createOrder.isPending || gatewayLoading}>
+              {gatewayLoading ? <Loader2 className="w-4 h-4 mr-2 animate-spin" /> : <Lock className="w-4 h-4 mr-2" />}
+              {gatewayLoading
+                ? `${payment === "bkash" ? "বিকাশ" : "নগদ"} পেমেন্ট প্রসেসিং...`
+                : createOrder.isPending
+                ? "অর্ডার করছি..."
+                : `অর্ডার নিশ্চিত করুন • ${bdt(total)}`}
             </Button>
+
+            <div className="relative my-1">
+              <div className="absolute inset-0 flex items-center"><div className="w-full border-t" /></div>
+              <div className="relative flex justify-center"><span className="bg-card px-2 text-[10px] uppercase tracking-wider text-muted-foreground">অথবা</span></div>
+            </div>
+
+            <WhatsAppOrderCta
+              items={lines.map((l) => ({
+                titleBn: l.product.titleBn,
+                qty: l.qty,
+                unit: l.product.unit,
+                unitPrice: l.unitPrice,
+                lineTotal: l.lineTotal,
+              }))}
+              subtotal={subtotal}
+              shipping={shipping}
+              total={total}
+              customerName={form.name}
+              customerPhone={form.phone}
+              shopName={form.shopName}
+              district={form.district}
+              area={form.area}
+              addressLine={form.addressLine}
+              note={note}
+              source="checkout"
+              className="w-full"
+              size="lg"
+              label="WhatsApp এ অর্ডার পাঠান"
+            />
             <div className="text-xs text-muted-foreground flex items-center gap-1 justify-center">
               <CheckCircle2 className="w-3 h-3 text-emerald-600" /> নিরাপদ ও সুরক্ষিত পেমেন্ট
             </div>

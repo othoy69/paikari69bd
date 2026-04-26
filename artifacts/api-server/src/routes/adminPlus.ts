@@ -32,6 +32,7 @@ function ensure() {
   if (!db.smsLogs) db.smsLogs = [];
   if (!db.txnLogs) db.txnLogs = [];
   if (!db.settings) db.settings = JSON.parse(JSON.stringify(DEFAULT_SETTINGS));
+  if (!db.settings!.storefront) db.settings!.storefront = JSON.parse(JSON.stringify(DEFAULT_SETTINGS.storefront));
   return db;
 }
 
@@ -291,6 +292,21 @@ router.put("/admin/settings/roles", (req, res) => {
   if (Array.isArray(next?.roles)) db.settings!.roles = next.roles;
   saveDb();
   res.json(db.settings!.roles);
+});
+
+router.put("/admin/settings/storefront", (req, res) => {
+  const db = ensure();
+  const next = req.body ?? {};
+  db.settings!.storefront = {
+    ...db.settings!.storefront!,
+    ...next,
+    enabledTracking: {
+      ...db.settings!.storefront!.enabledTracking,
+      ...(next?.enabledTracking ?? {}),
+    },
+  };
+  saveDb();
+  res.json(db.settings!.storefront);
 });
 
 // ────────────────────────────────────────────────────────────────────

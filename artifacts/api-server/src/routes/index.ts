@@ -5,6 +5,9 @@ import ordersRouter from "./orders";
 import authRouter from "./auth";
 import adminRouter from "./admin";
 import adminPlusRouter from "./adminPlus";
+import adminUsersRouter from "./adminUsers";
+import accountRouter from "./account";
+import paymentsRouter from "./payments";
 import "../lib/seed";
 
 const router: IRouter = Router();
@@ -13,7 +16,10 @@ router.use(healthRouter);
 router.use(catalogRouter);
 router.use(ordersRouter);
 router.use(authRouter);
+router.use(accountRouter);
+router.use(paymentsRouter);
 router.use(adminRouter);
 router.use(adminPlusRouter);
+router.use(adminUsersRouter);
 
 export default router;

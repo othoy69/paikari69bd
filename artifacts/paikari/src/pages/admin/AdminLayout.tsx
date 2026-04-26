@@ -12,6 +12,8 @@ import {
   ArrowLeft,
   Menu,
   X,
+  Users,
+  Globe,
 } from "lucide-react";
 
 const NAV = [
@@ -20,8 +22,10 @@ const NAV = [
   { href: "/admin/products", label: "পণ্য", icon: Package, group: "ops" },
   { href: "/admin/inventory", label: "স্টক ম্যানেজ", icon: Boxes, group: "ops" },
   { href: "/admin/reviews", label: "রিভিউ ম্যানেজ", icon: Star, group: "ops" },
+  { href: "/admin/users", label: "কাস্টমার ম্যানেজ", icon: Users, group: "ops" },
   { href: "/admin/payments", label: "পেমেন্ট সেটিংস", icon: CreditCard, group: "settings" },
   { href: "/admin/sms", label: "SMS সেটিংস", icon: MessageSquare, group: "settings" },
+  { href: "/admin/storefront", label: "স্টোরফ্রন্ট ও ট্র্যাকিং", icon: Globe, group: "settings" },
   { href: "/admin/roles", label: "রোল ও অনুমতি", icon: ShieldCheck, group: "settings" },
 ];
 
