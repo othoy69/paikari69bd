@@ -4,6 +4,14 @@ import { logger } from "./logger";
 
 export type PriceTier = { minQty: number; price: number; label?: string };
 
+export type ProductVariant = {
+  id: string;
+  name: string;
+  sku?: string;
+  price?: number;
+  stock?: number;
+};
+
 export type Product = {
   id: string;
   slug: string;
@@ -17,6 +25,7 @@ export type Product = {
   gallery: string[];
   oldPrice: number;
   wholesalePrice: number;
+  costPrice?: number;
   moq: number;
   unit: string;
   tiers: PriceTier[];
@@ -27,6 +36,13 @@ export type Product = {
   deliveryNote: string;
   flashEndsAt?: string;
   tags?: string[];
+  variants?: ProductVariant[];
+  seoTitle?: string;
+  seoDescription?: string;
+  seoKeywords?: string;
+  featured?: boolean;
+  hotDeal?: boolean;
+  published?: boolean;
 };
 
 export type Category = {
@@ -56,7 +72,29 @@ export type OrderStatus =
   | "packed"
   | "shipped"
   | "delivered"
-  | "cancelled";
+  | "cancelled"
+  | "returned";
+
+export type CourierStatus =
+  | "not_assigned"
+  | "pickup_requested"
+  | "picked_up"
+  | "in_transit"
+  | "out_for_delivery"
+  | "delivered"
+  | "returned"
+  | "lost";
+
+export type CourierProvider = "steadfast" | "pathao" | "redx" | "ecourier" | "manual";
+
+export type FraudFlag =
+  | "new_customer"
+  | "high_value"
+  | "many_returns"
+  | "phone_blacklist"
+  | "courier_returns"
+  | "repeat_cancel"
+  | "burst_orders";
 
 export type OrderItem = {
   productId: string;
@@ -92,6 +130,40 @@ export type Order = {
   savings?: number;
   total: number;
   userIdentifier?: string;
+  // Courier / shipment
+  courier?: CourierProvider;
+  trackingId?: string;
+  courierStatus?: CourierStatus;
+  deliveryCharge?: number;
+  codAmount?: number;
+  fastDelivery?: boolean;
+  // Fraud
+  fraudScore?: number;
+  fraudFlags?: FraudFlag[];
+};
+
+export type AbandonedCart = {
+  id: string;
+  identifier?: string;
+  phone?: string;
+  name?: string;
+  items: { productId: string; titleBn: string; image: string; qty: number; unitPrice: number }[];
+  subtotal: number;
+  status: "active" | "recovered" | "lost";
+  recoveryMessageSentAt?: string;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type CustomerLedgerEntry = {
+  id: string;
+  identifier: string;
+  type: "credit" | "debit" | "refund" | "adjust";
+  amount: number;
+  note?: string;
+  orderNo?: string;
+  author: string;
+  createdAt: string;
 };
 
 export type Review = {
@@ -191,6 +263,38 @@ export type AdminRole = {
   members: { name: string; phone?: string }[];
 };
 
+export type CourierSettings = {
+  defaultProvider: CourierProvider;
+  steadfast: {
+    enabled: boolean;
+    mode: "test" | "live";
+    apiBaseUrl: string;
+    apiKey: string;
+    secretKey: string;
+    notifyUrl: string;
+  };
+  pathao: { enabled: boolean; clientId: string; clientSecret: string };
+  redx: { enabled: boolean; apiKey: string };
+  ecourier: { enabled: boolean; apiKey: string; secret: string };
+  defaultDeliveryCharge: { insideDhaka: number; outsideDhaka: number; subDhaka: number };
+  fastDelivery: { enabled: boolean; chargeExtra: number; areas: string[] };
+};
+
+export type SeoSettings = {
+  siteName: string;
+  defaultTitle: string;
+  defaultDescription: string;
+  defaultKeywords: string;
+  ogImage: string;
+  twitterHandle?: string;
+  homepage: { title: string; description: string; keywords: string };
+  productPattern: { title: string; description: string };
+  categoryPattern: { title: string; description: string };
+  sitemapEnabled: boolean;
+  robotsAllow: boolean;
+  canonicalDomain: string;
+};
+
 export type StorefrontSettings = {
   whatsappNumber: string;
   whatsappDisplay: string;
@@ -215,6 +319,8 @@ export type Settings = {
   sms: SmsSettings;
   roles: AdminRole[];
   storefront?: StorefrontSettings;
+  courier?: CourierSettings;
+  seo?: SeoSettings;
 };
 
 export type SavedAddress = {
@@ -268,6 +374,8 @@ type DB = {
   smsLogs?: SmsLog[];
   txnLogs?: TxnLog[];
   settings?: Settings;
+  abandonedCarts?: AbandonedCart[];
+  ledger?: CustomerLedgerEntry[];
 };
 
 export const DEFAULT_SETTINGS: Settings = {
@@ -312,6 +420,46 @@ export const DEFAULT_SETTINGS: Settings = {
       delivered: "অর্ডার {orderNo} সফলভাবে ডেলিভার হয়েছে। আবার অর্ডার করুন paikari69bd.com",
       cancelled: "দুঃখিত, আপনার অর্ডার {orderNo} বাতিল হয়েছে। প্রশ্ন থাকলে: 01872-888954",
     },
+  },
+  courier: {
+    defaultProvider: "steadfast",
+    steadfast: {
+      enabled: false,
+      mode: "test",
+      apiBaseUrl: "https://portal.packzy.com/api/v1",
+      apiKey: "",
+      secretKey: "",
+      notifyUrl: "https://paikari69bd.com/api/courier/steadfast/webhook",
+    },
+    pathao: { enabled: false, clientId: "", clientSecret: "" },
+    redx: { enabled: false, apiKey: "" },
+    ecourier: { enabled: false, apiKey: "", secret: "" },
+    defaultDeliveryCharge: { insideDhaka: 60, subDhaka: 100, outsideDhaka: 130 },
+    fastDelivery: { enabled: true, chargeExtra: 50, areas: ["ঢাকা শহর"] },
+  },
+  seo: {
+    siteName: "পাইকারি69bd.com",
+    defaultTitle: "পাইকারি69bd.com — বাংলাদেশের সেরা পাইকারি মার্কেটপ্লেস",
+    defaultDescription: "অরিজিনাল প্রোডাক্ট, পাইকারি দাম, সারাদেশে দ্রুত ডেলিভারি — রিসেলার ও দোকানদারদের প্রথম পছন্দ।",
+    defaultKeywords: "পাইকারি, wholesale Bangladesh, পাইকারি দাম, paikari, বাংলাদেশ, রিসেলার",
+    ogImage: "https://paikari69bd.com/og-cover.jpg",
+    twitterHandle: "@paikari69bd",
+    homepage: {
+      title: "পাইকারি দামে সারা বাংলাদেশে — পাইকারি69bd.com",
+      description: "৫০,০০০+ রিসেলারের ভরসার বাজার। অরিজিনাল প্রোডাক্ট, MOQ থেকে শুরু পাইকারি দাম, সারাদেশে দ্রুত ডেলিভারি।",
+      keywords: "পাইকারি, wholesale, paikari69bd, রিসেলার, বাংলাদেশ পাইকারি",
+    },
+    productPattern: {
+      title: "{title} — পাইকারি দাম ৳{price} | পাইকারি69bd.com",
+      description: "{title}, পাইকারি দাম ৳{price}, MOQ {moq} {unit}, সারাদেশে দ্রুত ডেলিভারি। অর্ডার করুন paikari69bd.com",
+    },
+    categoryPattern: {
+      title: "{category} — পাইকারি কালেকশন | পাইকারি69bd.com",
+      description: "{category} ক্যাটাগরির সেরা পাইকারি প্রোডাক্ট। বেস্ট দাম, ফ্রেশ স্টক, সারাদেশে ডেলিভারি।",
+    },
+    sitemapEnabled: true,
+    robotsAllow: true,
+    canonicalDomain: "https://paikari69bd.com",
   },
   storefront: {
     whatsappNumber: "8801872888954",
@@ -372,6 +520,8 @@ let db: DB = {
   smsLogs: [],
   txnLogs: [],
   settings: DEFAULT_SETTINGS,
+  abandonedCarts: [],
+  ledger: [],
 };
 
 function load() {
@@ -386,7 +536,15 @@ function load() {
         stockLogs: loaded.stockLogs ?? [],
         smsLogs: loaded.smsLogs ?? [],
         txnLogs: loaded.txnLogs ?? [],
-        settings: loaded.settings ?? DEFAULT_SETTINGS,
+        abandonedCarts: loaded.abandonedCarts ?? [],
+        ledger: loaded.ledger ?? [],
+        settings: {
+          ...DEFAULT_SETTINGS,
+          ...(loaded.settings ?? {}),
+          courier: loaded.settings?.courier ?? DEFAULT_SETTINGS.courier,
+          seo: loaded.settings?.seo ?? DEFAULT_SETTINGS.seo,
+          storefront: loaded.settings?.storefront ?? DEFAULT_SETTINGS.storefront,
+        },
       };
     }
   } catch (err) {
